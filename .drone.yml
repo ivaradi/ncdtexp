@@ -348,6 +348,7 @@ trigger:
   event:
     - pull_request
     - push
+    - tag
 ---
 kind: pipeline
 name: Documentation
