@@ -227,36 +227,46 @@ Description: Nextcloud integration for Caja
  your MATE Desktop.
 
 Package: nextcloud-client
+Section: oldlibs
+Priority: optional
 Architecture: any
-Depends: nextcloud-desktop (= ${binary:Version}), nextcloud-desktop-cmd (= ${binary:Version}),  nextcloud-desktop-doc (= ${binary:Version})
+Depends: nextcloud-desktop (= ${binary:Version}), nextcloud-desktop-cmd (= ${binary:Version}),  nextcloud-desktop-doc (= ${source:Version}), ${misc:Depends}
 Description: Nextcloud folder synchronization tool (transitional package)
  This is a transitional package for compatibility with the old Nextcloud
  client PPA packages names. It can be safely deleted.
 
 Package: nextcloud-client-caja
+Section: oldlibs
+Priority: optional
 Architecture: all
-Depends: caja-nextcloud (= ${binary:Version})
+Depends: caja-nextcloud (= ${binary:Version}), ${misc:Depends}
 Description: Nextcloud integration for Caja (transitional package)
  This is a transitional package for compatibility with the old Nextcloud
  client PPA packages names. It can be safely deleted.
 
 Package: nextcloud-client-dolphin
-Architecture: all
-Depends: dolphin-nextcloud (= ${binary:Version})
+Section: oldlibs
+Priority: optional
+Architecture: any
+Depends: dolphin-nextcloud (= ${binary:Version}), ${misc:Depends}
 Description: Nextcloud integration for Dolphin (transitional package)
  This is a transitional package for compatibility with the old Nextcloud
  client PPA packages names. It can be safely deleted.
 
 Package: nextcloud-client-nautilus
+Section: oldlibs
+Priority: optional
 Architecture: all
-Depends: nautilus-nextcloud (= ${binary:Version})
+Depends: nautilus-nextcloud (= ${binary:Version}), ${misc:Depends}
 Description: Nextcloud integration for Nautilus (transitional package)
  This is a transitional package for compatibility with the old Nextcloud
  client PPA packages names. It can be safely deleted.
 
 Package: nextcloud-client-nemo
+Section: oldlibs
+Priority: optional
 Architecture: all
-Depends: nemo-nextcloud (= ${binary:Version})
+Depends: nemo-nextcloud (= ${binary:Version}), ${misc:Depends}
 Description: Nextcloud integration for Nemo (transitional package)
  This is a transitional package for compatibility with the old Nextcloud
  client PPA packages names. It can be safely deleted.
