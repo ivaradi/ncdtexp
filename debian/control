@@ -225,3 +225,38 @@ Description: Nextcloud integration for Caja
  .
  Caja Nextcloud is an extension that integrates the Nextcloud web service with
  your MATE Desktop.
+
+Package: nextcloud-client
+Architecture: any
+Depends: nextcloud-desktop (= ${binary:Version}), nextcloud-desktop-cmd (= ${binary:Version}),  nextcloud-desktop-doc (= ${binary:Version})
+Description: Nextcloud folder synchronization tool (transitional package)
+ This is a transitional package for compatibility with the old Nextcloud
+ client PPA packages names. It can be safely deleted.
+
+Package: nextcloud-client-caja
+Architecture: all
+Depends: caja-nextcloud (= ${binary:Version})
+Description: Nextcloud integration for Caja (transitional package)
+ This is a transitional package for compatibility with the old Nextcloud
+ client PPA packages names. It can be safely deleted.
+
+Package: nextcloud-client-dolphin
+Architecture: all
+Depends: dolphin-nextcloud (= ${binary:Version})
+Description: Nextcloud integration for Dolphin (transitional package)
+ This is a transitional package for compatibility with the old Nextcloud
+ client PPA packages names. It can be safely deleted.
+
+Package: nextcloud-client-nautilus
+Architecture: all
+Depends: nautilus-nextcloud (= ${binary:Version})
+Description: Nextcloud integration for Nautilus (transitional package)
+ This is a transitional package for compatibility with the old Nextcloud
+ client PPA packages names. It can be safely deleted.
+
+Package: nextcloud-client-nemo
+Architecture: all
+Depends: nemo-nextcloud (= ${binary:Version})
+Description: Nextcloud integration for Nemo (transitional package)
+ This is a transitional package for compatibility with the old Nextcloud
+ client PPA packages names. It can be safely deleted.
