@@ -103,57 +103,29 @@
     </message>
 </context>
 <context>
-    <name>Flow2AuthCredsPage</name>
-    <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.ui" line="14"/>
-        <source>Browser Authentication</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.ui" line="36"/>
-        <source>Please switch to your browser to proceed.</source>
-        <translation>Za nastavak prijeđite na preglednik.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.ui" line="46"/>
-        <source>An error occurred while connecting. Please try again.</source>
-        <translation>Došlo je do pogreške tijekom povezivanja. Pokušajte ponovno.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.ui" line="56"/>
-        <source>Re-open Browser</source>
-        <translation>Ponovno otvori preglednik</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.ui" line="70"/>
-        <source>Copy link</source>
-        <translation>Kopiraj poveznicu</translation>
-    </message>
-</context>
-<context>
     <name>Flow2AuthWidget</name>
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.ui" line="26"/>
         <source>Browser Authentication</source>
-        <translation type="unfinished"/>
+        <translation>Autentifikacija preglednika</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/flow2authwidget.ui" line="48"/>
+        <location filename="../src/gui/wizard/flow2authwidget.ui" line="32"/>
         <source>Please switch to your browser to proceed.</source>
         <translation>Za nastavak prijeđite na preglednik.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/flow2authwidget.ui" line="58"/>
+        <location filename="../src/gui/wizard/flow2authwidget.ui" line="42"/>
         <source>An error occurred while connecting. Please try again.</source>
         <translation>Došlo je do pogreške tijekom povezivanja. Pokušajte ponovno.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/flow2authwidget.ui" line="68"/>
+        <location filename="../src/gui/wizard/flow2authwidget.ui" line="52"/>
         <source>Re-open Browser</source>
         <translation>Ponovno otvori preglednik</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/flow2authwidget.ui" line="82"/>
+        <location filename="../src/gui/wizard/flow2authwidget.ui" line="65"/>
         <source>Copy link</source>
         <translation>Kopiraj poveznicu</translation>
     </message>
@@ -167,7 +139,7 @@
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="44"/>
-        <source>&amp;Choose...</source>
+        <source>&amp;Choose …</source>
         <translation>&amp;Odaberite...</translation>
     </message>
 </context>
@@ -180,8 +152,8 @@
     </message>
     <message>
         <location filename="../src/gui/folderwizardtargetpage.ui" line="143"/>
-        <source>Create Folder</source>
-        <translation>Stvori mapu</translation>
+        <source>Create folder</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/gui/folderwizardtargetpage.ui" line="163"/>
@@ -197,17 +169,17 @@
 <context>
     <name>OCC::AbstractNetworkJob</name>
     <message>
-        <location filename="../src/libsync/abstractnetworkjob.cpp" line="249"/>
+        <location filename="../src/libsync/abstractnetworkjob.cpp" line="282"/>
         <source>Connection timed out</source>
         <translation>Vrijeme sesije je isteklo</translation>
     </message>
     <message>
-        <location filename="../src/libsync/abstractnetworkjob.cpp" line="251"/>
+        <location filename="../src/libsync/abstractnetworkjob.cpp" line="284"/>
         <source>Unknown error: network reply was deleted</source>
         <translation>Nepoznata pogreška: odgovor mreže je izbrisan</translation>
     </message>
     <message>
-        <location filename="../src/libsync/abstractnetworkjob.cpp" line="403"/>
+        <location filename="../src/libsync/abstractnetworkjob.cpp" line="436"/>
         <source>Server replied &quot;%1 %2&quot; to &quot;%3 %4&quot;</source>
         <translation>Poslužitelj je odgovorio „%1 %2” na „%3 %4”</translation>
     </message>
@@ -227,11 +199,6 @@
 </context>
 <context>
     <name>OCC::AccountSettings</name>
-    <message>
-        <location filename="../src/gui/accountsettings.ui" line="211"/>
-        <source>Storage space: ...</source>
-        <translation>Prostor za pohranu:...</translation>
-    </message>
     <message>
         <location filename="../src/gui/accountsettings.ui" line="31"/>
         <source>Unchecked folders will be &lt;b&gt;removed&lt;/b&gt; from your local file system and will not be synchronized to this computer anymore</source>
@@ -253,16 +220,16 @@
         <translation>Primijeni ručne promjene</translation>
     </message>
     <message>
+        <location filename="../src/gui/accountsettings.ui" line="126"/>
+        <location filename="../src/gui/accountsettings.cpp" line="803"/>
+        <location filename="../src/gui/accountsettings.cpp" line="1219"/>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+    <message>
         <location filename="../src/gui/accountsettings.ui" line="139"/>
         <source>Apply</source>
         <translation>Potvrdi</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.ui" line="126"/>
-        <location filename="../src/gui/accountsettings.cpp" line="810"/>
-        <location filename="../src/gui/accountsettings.cpp" line="1223"/>
-        <source>Cancel</source>
-        <translation>Odustani</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.ui" line="174"/>
@@ -270,232 +237,237 @@
         <translation>Povezan s &lt;poslužitelj&gt; kao &lt;korisnik&gt;</translation>
     </message>
     <message>
+        <location filename="../src/gui/accountsettings.ui" line="211"/>
+        <source>Storage space: …</source>
+        <translation>Prostor za pohranu:...</translation>
+    </message>
+    <message>
         <location filename="../src/gui/accountsettings.cpp" line="190"/>
         <source>No account configured.</source>
         <translation>Račun nije konfiguriran.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="218"/>
-        <source>Add new</source>
-        <translation>Dodaj novi</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="226"/>
-        <source>Remove</source>
-        <translation>Ukloni</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="230"/>
-        <source>Account</source>
-        <translation>Račun</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="240"/>
+        <location filename="../src/gui/accountsettings.cpp" line="242"/>
         <source>This account supports end-to-end encryption</source>
         <translation>Ovaj račun podržava cjelovito šifriranje</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="242"/>
+        <location filename="../src/gui/accountsettings.cpp" line="244"/>
         <source>Enable encryption</source>
         <translation>Omogući šifriranje</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="259"/>
-        <source>Show E2E mnemonic</source>
-        <translation>Pokaži E2E mnemoničku oznaku</translation>
+        <location filename="../src/gui/accountsettings.cpp" line="220"/>
+        <source>Add new</source>
+        <translation>Dodaj novi</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="612"/>
-        <source>Encrypt</source>
-        <translation>Šifriraj</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="620"/>
-        <location filename="../src/gui/accountsettings.cpp" line="656"/>
-        <source>Edit Ignored Files</source>
-        <translation>Uredi zanemarene datoteke</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="660"/>
-        <source>Choose what to sync</source>
-        <translation>Odaberite što sinkronizirati</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="666"/>
-        <source>Force sync now</source>
-        <translation>Sinkroniziraj sada</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="668"/>
-        <source>Restart sync</source>
-        <translation>Ponovno pokreni sinkronizaciju</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="677"/>
-        <source>Remove folder sync connection</source>
-        <translation>Uklonite poveznicu za sinkronizaciju mape</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="748"/>
-        <source>Folder creation failed</source>
-        <translation>Neuspješna izrada mape</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="749"/>
-        <source>&lt;p&gt;Could not create local folder &lt;i&gt;%1&lt;/i&gt;.</source>
-        <translation>&lt;p&gt;Nije moguće stvoriti lokalnu mapu &lt;i&gt;%1&lt;/i&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="802"/>
-        <source>Confirm Folder Sync Connection Removal</source>
-        <translation>Potvrdi uklanjanje poveznice za sinkronizaciju mape</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="809"/>
-        <source>Remove Folder Sync Connection</source>
-        <translation>Uklonite poveznicu za sinkronizaciju mape</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="891"/>
-        <source>Sync Running</source>
-        <translation>Sinkronizacija u tijeku</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="892"/>
-        <source>The syncing operation is running.&lt;br/&gt;Do you want to terminate it?</source>
-        <translation>Sinkronizacija je pokrenuta.&lt;br/&gt;Želite li je prekinuti?</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="981"/>
-        <source>%1 in use</source>
-        <translation>%1 u upotrebi</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1008"/>
-        <source>%1 as &lt;i&gt;%2&lt;/i&gt;</source>
-        <translation>%1 kao &lt;i&gt;%2&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1014"/>
-        <source>The server version %1 is old and unsupported! Proceed at your own risk.</source>
-        <translation>Inačica poslužitelja %1 je stara i nepodržana! Nastavite na vlastitu odgovornost.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1016"/>
-        <source>Connected to %1.</source>
-        <translation>Povezano s %1.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1018"/>
-        <source>Server %1 is temporarily unavailable.</source>
-        <translation>Poslužitelj %1 privremeno nije dostupan.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1020"/>
-        <source>Server %1 is currently in maintenance mode.</source>
-        <translation>Poslužitelj %1 trenutno je u načinu održavanja.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1022"/>
-        <source>Signed out from %1.</source>
-        <translation>Odjavili ste se iz %1.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1031"/>
-        <source>Obtaining authorization from the browser. &lt;a href=&apos;%1&apos;&gt;Click here&lt;/a&gt; to re-open the browser.</source>
-        <translation>Dobivanje autorizacije od preglednika. &lt;a href=&apos;%1&apos;&gt;Kliknite ovdje&lt;/a&gt; za ponovno otvaranje preglednika.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1035"/>
-        <source>Connecting to %1...</source>
-        <translation>Povezivanje s %1...</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1038"/>
-        <source>No connection to %1 at %2.</source>
-        <translation>Ne postoji veza s %1 na %2.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1070"/>
-        <source>Log in</source>
-        <translation>Prijava</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1166"/>
-        <source>There are folders that were not synchronized because they are too big: </source>
-        <translation>Ove mape nisu sinkronizirane jer su prevelike:</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1168"/>
-        <source>There are folders that were not synchronized because they are external storages: </source>
-        <translation>Ove mape nisu sinkronizirane jer su vanjski prostori za pohranu: </translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1169"/>
-        <source>There are folders that were not synchronized because they are too big or external storages: </source>
-        <translation>Ove mape nisu sinkronizirane jer su prevelike ili su vanjski prostori za pohranu: </translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1215"/>
-        <source>Confirm Account Removal</source>
-        <translation>Potvrdi brisanje računa</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1216"/>
-        <source>&lt;p&gt;Do you really want to remove the connection to the account &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This will &lt;b&gt;not&lt;/b&gt; delete any files.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Želite li zaista ukloniti vezu s računom &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Napomena:&lt;/b&gt; time &lt;b&gt;nećete&lt;/b&gt; izbrisati datoteke.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1222"/>
-        <source>Remove connection</source>
-        <translation>Ukloni vezu</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="596"/>
-        <location filename="../src/gui/accountsettings.cpp" line="653"/>
-        <source>Open folder</source>
-        <translation>Otvori mapu</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/accountsettings.cpp" line="222"/>
-        <location filename="../src/gui/accountsettings.cpp" line="1072"/>
+        <location filename="../src/gui/accountsettings.cpp" line="224"/>
+        <location filename="../src/gui/accountsettings.cpp" line="1068"/>
         <source>Log out</source>
         <translation>Odjava</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="674"/>
+        <location filename="../src/gui/accountsettings.cpp" line="228"/>
+        <source>Remove</source>
+        <translation>Ukloni</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="232"/>
+        <source>Account</source>
+        <translation>Račun</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="261"/>
+        <source>Show E2E mnemonic</source>
+        <translation>Pokaži E2E mnemoničku oznaku</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="589"/>
+        <location filename="../src/gui/accountsettings.cpp" line="646"/>
+        <source>Open folder</source>
+        <translation>Otvori mapu</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="605"/>
+        <source>Encrypt</source>
+        <translation>Šifriraj</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="613"/>
+        <location filename="../src/gui/accountsettings.cpp" line="649"/>
+        <source>Edit Ignored Files</source>
+        <translation>Uredi zanemarene datoteke</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="653"/>
+        <source>Choose what to sync</source>
+        <translation>Odaberite što sinkronizirati</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="659"/>
+        <source>Force sync now</source>
+        <translation>Sinkroniziraj sada</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="661"/>
+        <source>Restart sync</source>
+        <translation>Ponovno pokreni sinkronizaciju</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="667"/>
         <source>Resume sync</source>
         <translation>Nastavi sinkronizaciju</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="674"/>
+        <location filename="../src/gui/accountsettings.cpp" line="667"/>
         <source>Pause sync</source>
         <translation>Pauziraj sinkronizaciju</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="803"/>
+        <location filename="../src/gui/accountsettings.cpp" line="670"/>
+        <source>Remove folder sync connection</source>
+        <translation>Uklonite poveznicu za sinkronizaciju mape</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="741"/>
+        <source>Folder creation failed</source>
+        <translation>Neuspješna izrada mape</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="742"/>
+        <source>&lt;p&gt;Could not create local folder &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Nije moguće stvoriti lokalnu mapu &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="795"/>
+        <source>Confirm Folder Sync Connection Removal</source>
+        <translation>Potvrdi uklanjanje poveznice za sinkronizaciju mape</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="796"/>
         <source>&lt;p&gt;Do you really want to stop syncing the folder &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This will &lt;b&gt;not&lt;/b&gt; delete any files.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Želite li zaista prekinuti sinkronizaciju mape &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Napomena:&lt;/b&gt; time &lt;b&gt;nećete&lt;/b&gt; izbrisati datoteke.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="968"/>
+        <location filename="../src/gui/accountsettings.cpp" line="802"/>
+        <source>Remove Folder Sync Connection</source>
+        <translation>Uklonite poveznicu za sinkronizaciju mape</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="887"/>
+        <source>Sync Running</source>
+        <translation>Sinkronizacija u tijeku</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="888"/>
+        <source>The syncing operation is running.&lt;br/&gt;Do you want to terminate it?</source>
+        <translation>Sinkronizacija je pokrenuta.&lt;br/&gt;Želite li je prekinuti?</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="964"/>
         <source>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</source>
         <translation>%1 (%3%) od %2 u upotrebi. Neke mape, uključujući mrežne ili dijeljene mape, mogu imati različita ograničenja.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="969"/>
+        <location filename="../src/gui/accountsettings.cpp" line="965"/>
         <source>%1 of %2 in use</source>
         <translation>%1 od %2 u upotrebi</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="978"/>
+        <location filename="../src/gui/accountsettings.cpp" line="974"/>
         <source>Currently there is no storage usage information available.</source>
         <translation>Trenutno nema dostupnih podataka o uporabi pohrane.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1044"/>
+        <location filename="../src/gui/accountsettings.cpp" line="977"/>
+        <source>%1 in use</source>
+        <translation>%1 u upotrebi</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1004"/>
+        <source>%1 as &lt;i&gt;%2&lt;/i&gt;</source>
+        <translation>%1 kao &lt;i&gt;%2&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1010"/>
+        <source>The server version %1 is old and unsupported! Proceed at your own risk.</source>
+        <translation>Inačica poslužitelja %1 je stara i nepodržana! Nastavite na vlastitu odgovornost.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1012"/>
+        <source>Connected to %1.</source>
+        <translation>Povezano s %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1014"/>
+        <source>Server %1 is temporarily unavailable.</source>
+        <translation>Poslužitelj %1 privremeno nije dostupan.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1016"/>
+        <source>Server %1 is currently in maintenance mode.</source>
+        <translation>Poslužitelj %1 trenutno je u načinu održavanja.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1018"/>
+        <source>Signed out from %1.</source>
+        <translation>Odjavili ste se iz %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1027"/>
+        <source>Obtaining authorization from the browser. &lt;a href=&apos;%1&apos;&gt;Click here&lt;/a&gt; to re-open the browser.</source>
+        <translation>Dobivanje autorizacije od preglednika. &lt;a href=&apos;%1&apos;&gt;Kliknite ovdje&lt;/a&gt; za ponovno otvaranje preglednika.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1031"/>
+        <source>Connecting to %1 …</source>
+        <translation>Povezivanje s %1…</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1034"/>
+        <source>No connection to %1 at %2.</source>
+        <translation>Ne postoji veza s %1 na %2.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1040"/>
         <source>No %1 connection configured.</source>
         <translation>Nije konfigurirana veza %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1066"/>
+        <source>Log in</source>
+        <translation>Prijava</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1162"/>
+        <source>There are folders that were not synchronized because they are too big: </source>
+        <translation>Ove mape nisu sinkronizirane jer su prevelike:</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1164"/>
+        <source>There are folders that were not synchronized because they are external storages: </source>
+        <translation>Ove mape nisu sinkronizirane jer su vanjski prostori za pohranu: </translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1165"/>
+        <source>There are folders that were not synchronized because they are too big or external storages: </source>
+        <translation>Ove mape nisu sinkronizirane jer su prevelike ili su vanjski prostori za pohranu: </translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1211"/>
+        <source>Confirm Account Removal</source>
+        <translation>Potvrdi brisanje računa</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1212"/>
+        <source>&lt;p&gt;Do you really want to remove the connection to the account &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This will &lt;b&gt;not&lt;/b&gt; delete any files.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Želite li zaista ukloniti vezu s računom &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Napomena:&lt;/b&gt; time &lt;b&gt;nećete&lt;/b&gt; izbrisati datoteke.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/accountsettings.cpp" line="1218"/>
+        <source>Remove connection</source>
+        <translation>Ukloni vezu</translation>
     </message>
 </context>
 <context>
@@ -547,62 +519,16 @@
     </message>
 </context>
 <context>
-    <name>OCC::ActivityItemDelegate</name>
-    <message>
-        <location filename="../src/gui/activityitemdelegate.cpp" line="141"/>
-        <source>%1</source>
-        <translation>%1</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/activityitemdelegate.cpp" line="193"/>
-        <source>More information</source>
-        <translation>Više informacija</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/activityitemdelegate.cpp" line="194"/>
-        <source>Accept</source>
-        <translation>Prihvati</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/activityitemdelegate.cpp" line="195"/>
-        <source>Join</source>
-        <translation>Pridruži se</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/activityitemdelegate.cpp" line="216"/>
-        <source>Open Browser</source>
-        <translation>Otvori preglednik</translation>
-    </message>
-</context>
-<context>
     <name>OCC::ActivityListModel</name>
     <message>
-        <location filename="../src/gui/activitylistmodel.cpp" line="229"/>
+        <location filename="../src/gui/activitylistmodel.cpp" line="241"/>
         <source>Files from the ignore list as well as symbolic links are not synced. This includes:</source>
-        <translation type="unfinished"/>
-    </message>
-</context>
-<context>
-    <name>OCC::ActivityWidget</name>
-    <message>
-        <location filename="../src/gui/activitywidget.cpp" line="56"/>
-        <source>Accept</source>
-        <translation>Prihvati</translation>
+        <translation>Ne sinkroniziraju se datoteke s popisa za zanemarivanje, kao ni simboličke poveznice. Navedeno uključuje:</translation>
     </message>
     <message>
-        <location filename="../src/gui/activitywidget.cpp" line="189"/>
-        <source>Synced</source>
-        <translation>Sinkronizirano</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/activitywidget.cpp" line="228"/>
-        <source>Retry all uploads</source>
-        <translation>Ponovno pokreni sve otpreme</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/activitywidget.cpp" line="343"/>
-        <source>&lt;br/&gt;Account %1 does not have activities enabled.</source>
-        <translation>&lt;br/&gt;Račun %1 nema omogućenih aktivnosti.</translation>
+        <location filename="../src/gui/tray/ActivityListModel.cpp" line="424"/>
+        <source>For more activities please open the Activity app.</source>
+        <translation>Više aktivnosti možete pronaći u aplikaciji Activity.</translation>
     </message>
 </context>
 <context>
@@ -624,13 +550,13 @@
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51"/>
-        <source>Browse...</source>
+        <source>Browse …</source>
         <translation>Pretraži...</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="60"/>
-        <source>Certificate password :</source>
-        <translation>Zaporka vjerodajnice:</translation>
+        <source>Certificate password:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="38"/>
@@ -646,17 +572,17 @@
 <context>
     <name>OCC::Application</name>
     <message>
-        <location filename="../src/gui/application.cpp" line="192"/>
+        <location filename="../src/gui/application.cpp" line="198"/>
         <source>Error accessing the configuration file</source>
         <translation>Pogreška pri pristupanju konfiguracijskoj datoteci</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="193"/>
+        <location filename="../src/gui/application.cpp" line="199"/>
         <source>There was an error while accessing the configuration file at %1. Please make sure the file can be accessed by your user.</source>
         <translation>Došlo je do pogreške prilikom pristupanja konfiguracijskoj datoteci na %1. Provjerite može li korisnik pristupiti datoteci.</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="196"/>
+        <location filename="../src/gui/application.cpp" line="202"/>
         <source>Quit %1</source>
         <translation>Zatvori %1</translation>
     </message>
@@ -708,40 +634,40 @@
 <context>
     <name>OCC::ConnectionValidator</name>
     <message>
-        <location filename="../src/gui/connectionvalidator.cpp" line="47"/>
-        <source>No ownCloud account configured</source>
-        <translation>Nije konfiguriran račun za ownCloud</translation>
+        <location filename="../src/gui/connectionvalidator.cpp" line="50"/>
+        <source>No Nextcloud account configured</source>
+        <translation>Nema konfiguriranih Nexcloudovih računa</translation>
     </message>
     <message>
-        <location filename="../src/gui/connectionvalidator.cpp" line="282"/>
-        <source>The configured server for this client is too old</source>
-        <translation>Konfigurirani poslužitelj za ovog klijenta je prestar</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/connectionvalidator.cpp" line="283"/>
-        <source>Please update to the latest server and restart the client.</source>
-        <translation>Ažurirajte na najnoviji poslužitelj i ponovno pokrenite klijenta.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/connectionvalidator.cpp" line="144"/>
+        <location filename="../src/gui/connectionvalidator.cpp" line="147"/>
         <source>Authentication error: Either username or password are wrong.</source>
         <translation>Pogrešna autentifikacija: pogrešno korisničko ime ili zaporka.</translation>
     </message>
     <message>
-        <location filename="../src/gui/connectionvalidator.cpp" line="156"/>
+        <location filename="../src/gui/connectionvalidator.cpp" line="159"/>
         <source>timeout</source>
         <translation>istek vremena</translation>
     </message>
     <message>
-        <location filename="../src/gui/connectionvalidator.cpp" line="193"/>
+        <location filename="../src/gui/connectionvalidator.cpp" line="196"/>
         <source>The provided credentials are not correct</source>
         <translation>Navedene vjerodajnice nisu točne</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/connectionvalidator.cpp" line="284"/>
+        <source>The configured server for this client is too old</source>
+        <translation>Konfigurirani poslužitelj za ovog klijenta je prestar</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/connectionvalidator.cpp" line="285"/>
+        <source>Please update to the latest server and restart the client.</source>
+        <translation>Ažurirajte na najnoviji poslužitelj i ponovno pokrenite klijenta.</translation>
     </message>
 </context>
 <context>
     <name>OCC::DiscoveryMainThread</name>
     <message>
-        <location filename="../src/libsync/discoveryphase.cpp" line="631"/>
+        <location filename="../src/libsync/discoveryphase.cpp" line="638"/>
         <source>Aborted by the user</source>
         <translation>Prekinuo korisnik</translation>
     </message>
@@ -749,7 +675,7 @@
 <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-        <location filename="../src/libsync/discoveryphase.cpp" line="392"/>
+        <location filename="../src/libsync/discoveryphase.cpp" line="399"/>
         <source>The server file discovery reply is missing data.</source>
         <translation>Nedostaju podaci u odgovoru datoteke poslužitelja.</translation>
     </message>
@@ -757,26 +683,26 @@
 <context>
     <name>OCC::Flow2Auth</name>
     <message>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="76"/>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="145"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="109"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="212"/>
         <source>Error returned from the server: &lt;em&gt;%1&lt;/em&gt;</source>
         <translation>Poslužitelj je vratio pogrešku: &lt;em&gt;%1&lt;/em&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="79"/>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="148"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="112"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="215"/>
         <source>There was an error accessing the &apos;token&apos; endpoint: &lt;br&gt;&lt;em&gt;%1&lt;/em&gt;</source>
         <translation>Došlo je do pogreške prilikom pristupanja krajnjoj točki ‘token’: &lt;br&gt;&lt;em&gt;%1&lt;/em&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="82"/>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="151"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="115"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="218"/>
         <source>Could not parse the JSON returned from the server: &lt;br&gt;&lt;em&gt;%1&lt;/em&gt;</source>
         <translation>Nije moguće parsirati JSON koji je vratio poslužitelj: &lt;br&gt;&lt;em&gt;%1&lt;/em&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="85"/>
-        <location filename="../src/gui/creds/flow2auth.cpp" line="154"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="118"/>
+        <location filename="../src/gui/creds/flow2auth.cpp" line="221"/>
         <source>The reply from the server did not contain all expected fields</source>
         <translation>Odgovor poslužitelja ne sadrži sva očekivana polja</translation>
     </message>
@@ -784,27 +710,42 @@
 <context>
     <name>OCC::Flow2AuthCredsPage</name>
     <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.cpp" line="46"/>
+        <location filename="../src/gui/wizard/flow2authcredspage.cpp" line="37"/>
         <source>Connect to %1</source>
         <translation>Poveži s %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.cpp" line="47"/>
+        <location filename="../src/gui/wizard/flow2authcredspage.cpp" line="38"/>
         <source>Login in your browser (Login Flow v2)</source>
         <translation>Prijavite se u svoj preglednik (Login Flow v2)</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/flow2authcredspage.cpp" line="83"/>
-        <source>Unable to open the Browser, please copy the link to your Browser.</source>
-        <translation>Otvaranje preglednika nije uspjelo, kopirajte poveznicu u preglednik.</translation>
     </message>
 </context>
 <context>
     <name>OCC::Flow2AuthWidget</name>
     <message>
-        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="67"/>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="80"/>
         <source>Unable to open the Browser, please copy the link to your Browser.</source>
         <translation>Otvaranje preglednika nije uspjelo, kopirajte poveznicu u preglednik.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="143"/>
+        <source>Waiting for authorization</source>
+        <translation>Čekanje autorizacije</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="148"/>
+        <source>Polling for authorization</source>
+        <translation>Dohvaćanje podataka za autorizaciju</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="153"/>
+        <source>Starting authorization</source>
+        <translation>Pokretanje autorizacije</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="157"/>
+        <source>Link copied to clipboard.</source>
+        <translation>Poveznica je kopirana u međuspremnik.</translation>
     </message>
 </context>
 <context>
@@ -824,11 +765,21 @@
         <source>%1 is not readable.</source>
         <translation>%1 nije čitljiva.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/gui/folder.cpp" line="373"/>
+        <source>%1 and %n other file(s) have been removed.</source>
+        <translation><numerusform>%1 i %n drugih datoteka su uklonjene.</numerusform><numerusform>%1 i %n drugih datoteka su uklonjene.</numerusform><numerusform>%1 i %n drugih datoteka su uklonjene.</numerusform></translation>
+    </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="375"/>
         <source>%1 has been removed.</source>
         <comment>%1 names a file.</comment>
         <translation>%1 je uklonjena.</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/gui/folder.cpp" line="380"/>
+        <source>%1 and %n other file(s) have been downloaded.</source>
+        <translation><numerusform>%1 i %n drugih datoteka su preuzete.</numerusform><numerusform>%1 i %n drugih datoteka su preuzete.</numerusform><numerusform>%1 i %n drugih datoteka su preuzete.</numerusform></translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="382"/>
@@ -836,11 +787,21 @@
         <comment>%1 names a file.</comment>
         <translation>%1 je preuzeta.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/gui/folder.cpp" line="387"/>
+        <source>%1 and %n other file(s) have been updated.</source>
+        <translation><numerusform>%1 i %n drugih datoteka su ažurirane.</numerusform><numerusform>%1 i %n drugih datoteka su ažurirane.</numerusform><numerusform>%1 i %n drugih datoteka su ažurirane.</numerusform></translation>
+    </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="389"/>
         <source>%1 has been updated.</source>
         <comment>%1 names a file.</comment>
         <translation>%1 je ažurirana.</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/gui/folder.cpp" line="394"/>
+        <source>%1 has been renamed to %2 and %n other file(s) have been renamed.</source>
+        <translation><numerusform>%1 je preimenovana u %2 i %n drugih datoteka je preimenovano.</numerusform><numerusform>%1 je preimenovana u %2 i %n drugih datoteka je preimenovano.</numerusform><numerusform>%1 je preimenovana u %2 i %n drugih datoteka je preimenovano.</numerusform></translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="396"/>
@@ -848,35 +809,15 @@
         <comment>%1 and %2 name files.</comment>
         <translation>%1 je preimenovana u %2.</translation>
     </message>
-    <message>
-        <location filename="../src/gui/folder.cpp" line="403"/>
-        <source>%1 has been moved to %2.</source>
-        <translation>%1 je premještena u %2.</translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../src/gui/folder.cpp" line="373"/>
-        <source>%1 and %n other file(s) have been removed.</source>
-        <translation><numerusform>%1 i %n drugih datoteka su uklonjene.</numerusform><numerusform>%1 i %n drugih datoteka su uklonjene.</numerusform><numerusform>%1 i %n drugih datoteka su uklonjene.</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../src/gui/folder.cpp" line="380"/>
-        <source>%1 and %n other file(s) have been downloaded.</source>
-        <translation><numerusform>%1 i %n drugih datoteka su preuzete.</numerusform><numerusform>%1 i %n drugih datoteka su preuzete.</numerusform><numerusform>%1 i %n drugih datoteka su preuzete.</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../src/gui/folder.cpp" line="387"/>
-        <source>%1 and %n other file(s) have been updated.</source>
-        <translation><numerusform>%1 i %n drugih datoteka su ažurirane.</numerusform><numerusform>%1 i %n drugih datoteka su ažurirane.</numerusform><numerusform>%1 i %n drugih datoteka su ažurirane.</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../src/gui/folder.cpp" line="394"/>
-        <source>%1 has been renamed to %2 and %n other file(s) have been renamed.</source>
-        <translation><numerusform>%1 je preimenovana u %2 i %n drugih datoteka je preimenovano.</numerusform><numerusform>%1 je preimenovana u %2 i %n drugih datoteka je preimenovano.</numerusform><numerusform>%1 je preimenovana u %2 i %n drugih datoteka je preimenovano.</numerusform></translation>
-    </message>
     <message numerus="yes">
         <location filename="../src/gui/folder.cpp" line="401"/>
         <source>%1 has been moved to %2 and %n other file(s) have been moved.</source>
         <translation><numerusform>%1 je premještena u %2 i %n drugih datoteka je premješteno.</numerusform><numerusform>%1 je premještena u %2 i %n drugih datoteka je premješteno.</numerusform><numerusform>%1 je premještena u %2 i %n drugih datoteka je premješteno.</numerusform></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folder.cpp" line="403"/>
+        <source>%1 has been moved to %2.</source>
+        <translation>%1 je premještena u %2.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/gui/folder.cpp" line="408"/>
@@ -901,12 +842,12 @@
     <message numerus="yes">
         <location filename="../src/gui/folder.cpp" line="422"/>
         <source>%1 and %n other file(s) are currently locked.</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%1 i %n druga datoteka trenutno su zaključane.</numerusform><numerusform>%1 i %n druge datoteke trenutno su zaključane.</numerusform><numerusform>%1 i %n drugih datoteka trenutno su zaključane.</numerusform></translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="424"/>
         <source>%1 is currently locked.</source>
-        <translation type="unfinished"/>
+        <translation>%1 trenutno je zaključan.</translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="432"/>
@@ -919,36 +860,36 @@
         <translation>Nije moguće pročitati datoteku izuzetka iz sustava</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="964"/>
+        <location filename="../src/gui/folder.cpp" line="970"/>
         <source>A new folder larger than %1 MB has been added: %2.
 </source>
         <translation>Dodana je nova mapa veća od %1 MB: %2.
 </translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="967"/>
+        <location filename="../src/gui/folder.cpp" line="973"/>
         <source>A folder from an external storage has been added.
 </source>
         <translation>Dodana je mapa iz vanjskog prostora za pohranu.
 </translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="968"/>
+        <location filename="../src/gui/folder.cpp" line="974"/>
         <source>Please go in the settings to select it if you wish to download it.</source>
         <translation>Idite u postavke kako biste je odabrali ako je želite preuzeti.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1023"/>
+        <location filename="../src/gui/folder.cpp" line="1029"/>
         <source>The folder %1 was created but was excluded from synchronization previously. Data inside it will not be synchronized.</source>
         <translation>Mapa %1 je stvorena, ali je prethodno isključena iz sinkronizacije. Podaci unutar nje neće se sinkronizirati.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1026"/>
+        <location filename="../src/gui/folder.cpp" line="1032"/>
         <source>The file %1 was created but was excluded from synchronization previously. It will not be synchronized.</source>
         <translation>Datoteka %1 je stvorena, ali je prethodno isključena iz sinkronizacije. Neće se sinkronizirati.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1037"/>
+        <location filename="../src/gui/folder.cpp" line="1043"/>
         <source>Changes in synchronized folders could not be tracked reliably.
 
 This means that the synchronization client might not upload local changes immediately and will instead only scan for local changes and upload them occasionally (every two hours by default).
@@ -961,37 +902,42 @@ To znači da klijent za sinkronizaciju možda neće odmah otpremiti lokalne prom
 %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1082"/>
+        <location filename="../src/gui/folder.cpp" line="1088"/>
         <source>All files in the sync folder '%1' were deleted on the server.
 These deletes will be synchronized to your local sync folder, making such files unavailable unless you have a right to restore. 
 If you decide to restore the files, they will be re-synced with the server if you have rights to do so.
 If you decide to delete the files, they will be unavailable to you, unless you are the owner.</source>
-        <translation type="unfinished"/>
+        <translation>Sve datoteke u mapi za sinkronizaciju &apos;%1&apos; izbrisane su s poslužitelja.
+Ta će se brisanja sinkronizirati s lokalnom mapom za sinkronizaciju, što znači da će takve datoteke biti nedostupne ako nemate ovlasti za vraćanje.
+Ako odlučite vratiti datoteke, ponovno će se sinkronizirati s poslužiteljem ako imate potrebne ovlasti.
+Ako odlučite izbrisati datoteke, one će vam biti nedostupne ako niste njihov vlasnik.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1087"/>
+        <location filename="../src/gui/folder.cpp" line="1093"/>
         <source>All files got deleted from your local sync folder '%1'.
 These files will be deleted from the server and will not be available on your other devices if they will not be restored.
 If this action was unintended you can restore the lost data now.</source>
-        <translation type="unfinished"/>
+        <translation>Sve su datoteke izbrisane iz lokalne mape za sinkronizaciju &apos;%1&apos;.
+Te će datoteke biti izbrisane s poslužitelja i neće biti dostupne na drugim uređajima, osim ako ih ne povratite.
+Ako navedena radnja nije bila namjerna, možete odmah vratiti izgubljene podatke.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1091"/>
+        <location filename="../src/gui/folder.cpp" line="1097"/>
         <source>Delete all files?</source>
-        <translation type="unfinished"/>
+        <translation>Izbrisati sve datoteke?</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1094"/>
+        <location filename="../src/gui/folder.cpp" line="1100"/>
         <source>Delete all files</source>
-        <translation type="unfinished"/>
+        <translation>Izbrisati sve datoteke?</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1095"/>
+        <location filename="../src/gui/folder.cpp" line="1101"/>
         <source>Restore deleted files</source>
-        <translation type="unfinished"/>
+        <translation>Vrati izbrisane datoteke</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1112"/>
+        <location filename="../src/gui/folder.cpp" line="1118"/>
         <source>This sync would reset the files to an earlier time in the sync folder '%1'.
 This might be because a backup was restored on the server.
 Continuing the sync as normal will cause all your files to be overwritten by an older file in an earlier state. Do you want to keep your local most recent files as conflict files?</source>
@@ -1000,17 +946,17 @@ To može biti zbog vraćanja sigurnosne kopije na poslužitelj.
 Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim inačicama istih datoteka. Želite li zadržati najnovije lokalne datoteke kao datoteke nepodudaranja?</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1117"/>
+        <location filename="../src/gui/folder.cpp" line="1123"/>
         <source>Backup detected</source>
         <translation>Otkrivena je sigurnosna kopija</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1120"/>
+        <location filename="../src/gui/folder.cpp" line="1126"/>
         <source>Normal Synchronisation</source>
         <translation>Normalna sinkronizacija</translation>
     </message>
     <message>
-        <location filename="../src/gui/folder.cpp" line="1121"/>
+        <location filename="../src/gui/folder.cpp" line="1127"/>
         <source>Keep Local Files as Conflict</source>
         <translation>Zadrži lokalne datoteke kao datoteke nepodudaranja</translation>
     </message>
@@ -1103,11 +1049,6 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>Nemate dopuštenje za pisanje u odabranu mapu!</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderman.cpp" line="1385"/>
-        <source>There is already a sync from the server to this local folder. Please pick another local folder!</source>
-        <translation>Već postoji sinkronizacija između poslužitelja i te lokalne mape. Odaberite drugu lokalnu mapu!</translation>
-    </message>
-    <message>
         <location filename="../src/gui/folderman.cpp" line="1365"/>
         <source>The local folder %1 already contains a folder used in a folder sync connection. Please pick another one!</source>
         <translation>Lokalna mapa %1 već sadrži mapu koja se upotrebljava u poveznici za sinkronizaciju mape. Odaberite drugu mapu!</translation>
@@ -1116,6 +1057,11 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <location filename="../src/gui/folderman.cpp" line="1371"/>
         <source>The local folder %1 is already contained in a folder used in a folder sync connection. Please pick another one!</source>
         <translation>Lokalna mapa %1 već je sadržana u mapi koja se upotrebljava u poveznici za sinkronizaciju mape. Odaberite drugu mapu!</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderman.cpp" line="1385"/>
+        <source>There is already a sync from the server to this local folder. Please pick another local folder!</source>
+        <translation>Već postoji sinkronizacija između poslužitelja i te lokalne mape. Odaberite drugu lokalnu mapu!</translation>
     </message>
 </context>
 <context>
@@ -1131,7 +1077,7 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>Sinkronizirano s lokalnom mapom (%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderstatusdelegate.cpp" line="303"/>
+        <location filename="../src/gui/folderstatusdelegate.cpp" line="313"/>
         <source>File</source>
         <translation>Datoteka</translation>
     </message>
@@ -1161,19 +1107,29 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>Pogreška prilikom učitavanja popisa mapa s poslužitelja.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderstatusmodel.cpp" line="239"/>
-        <source>Signed out</source>
-        <translation>Odjavljen</translation>
-    </message>
-    <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="189"/>
-        <source>Fetching folder list from server...</source>
-        <translation>Dohvaćanje popisa mapa s poslužitelja...</translation>
+        <source>Fetching folder list from server …</source>
+        <translation>Dohvaćanje popisa mapa s poslužitelja…</translation>
     </message>
     <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="215"/>
         <source>There are unresolved conflicts. Click for details.</source>
         <translation>Postoje neriješena nepodudaranja. Kliknite za pojedinosti.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderstatusmodel.cpp" line="239"/>
+        <source>Signed out</source>
+        <translation>Odjavljen</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderstatusmodel.cpp" line="921"/>
+        <source>Checking for changes in remote &apos;%1&apos;</source>
+        <translation>Provjera za promjene u udaljenom ‘%1’</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderstatusmodel.cpp" line="925"/>
+        <source>Checking for changes in local &apos;%1&apos;</source>
+        <translation>Provjera za promjene u lokalnom ‘%1’</translation>
     </message>
     <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="932"/>
@@ -1211,25 +1167,15 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>preuzimanje %1/s</translation>
     </message>
     <message>
+        <location filename="../src/gui/folderstatusmodel.cpp" line="1002"/>
+        <source>↓ %1/s</source>
+        <translation>↓ %1/s</translation>
+    </message>
+    <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="1010"/>
         <source>upload %1/s</source>
         <extracomment>Example text: &quot;upload 24Kb/s&quot; (%1 is replaced by 24Kb (translated))</extracomment>
         <translation>otpremanje %1/s</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderstatusmodel.cpp" line="921"/>
-        <source>Checking for changes in remote &apos;%1&apos;</source>
-        <translation>Provjera za promjene u udaljenom ‘%1’</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderstatusmodel.cpp" line="925"/>
-        <source>Checking for changes in local &apos;%1&apos;</source>
-        <translation>Provjera za promjene u lokalnom ‘%1’</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderstatusmodel.cpp" line="1002"/>
-        <source>↓ %1/s</source>
-        <translation>↓ %1/s</translation>
     </message>
     <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="1012"/>
@@ -1267,18 +1213,18 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
     </message>
     <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="1102"/>
-        <source>Waiting...</source>
-        <translation>Čekanje...</translation>
+        <source>Waiting …</source>
+        <translation>Čekanje…</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/gui/folderstatusmodel.cpp" line="1104"/>
-        <source>Waiting for %n other folder(s)...</source>
-        <translation><numerusform>Čeka se %n drugih mapa...</numerusform><numerusform>Čeka se %n drugih mapa...</numerusform><numerusform>Čeka se %n drugih mapa...</numerusform></translation>
+        <source>Waiting for %n other folder(s) …</source>
+        <translation><numerusform>Čeka se %n druga mapa…</numerusform><numerusform>Čekaju se %n druge mape…</numerusform><numerusform>Čeka se %n drugih mapa…</numerusform></translation>
     </message>
     <message>
         <location filename="../src/gui/folderstatusmodel.cpp" line="1110"/>
-        <source>Preparing to sync...</source>
-        <translation>Priprema za sinkronizaciju...</translation>
+        <source>Preparing to sync …</source>
+        <translation>Priprema za sinkronizaciju…</translation>
     </message>
 </context>
 <context>
@@ -1384,28 +1330,34 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
 <context>
     <name>OCC::GETFileJob</name>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="186"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="181"/>
         <source>No E-Tag received from server, check Proxy/Gateway</source>
         <translation>Nijedna E-oznaka nije primljena s poslužitelja, označite proxy/pristupno računalo</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="193"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="188"/>
         <source>We received a different E-Tag for resuming. Retrying next time.</source>
         <translation>Primljena je drugačija E-oznaka za nastavak. Ponovni pokušaj sljedeći put.</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="220"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="215"/>
         <source>Server returned wrong content-range</source>
         <translation>Poslužitelj je vratio pogrešan raspon sadržaja</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="332"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="325"/>
         <source>Connection Timeout</source>
         <translation>Istek veze</translation>
     </message>
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="20"/>
+        <location filename="../src/gui/generalsettings.ui" line="32"/>
+        <source>About</source>
+        <translation>Informacije</translation>
+    </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="41"/>
         <source>Legal notice</source>
@@ -1422,30 +1374,9 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>Za ladicu sustava</translation>
     </message>
     <message>
-        <location filename="../src/gui/generalsettings.ui" line="89"/>
-        <source>Show Server &amp;Notifications</source>
-        <translation>Prikaži poslužitelj i obavijesti</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="163"/>
-        <source>Advanced</source>
-        <translation>Napredno</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="195"/>
-        <source>Ask for confirmation before synchronizing folders larger than</source>
-        <translation>Zatraži potvrdu prije sinkronizacije mapa većih od</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="215"/>
-        <source>MB</source>
-        <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
-        <translation>MB</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="239"/>
-        <source>Ask for confirmation before synchronizing external storages</source>
-        <translation>Zatraži potvrdu prije sinkronizacije vanjskih prostora za pohranu</translation>
+        <location filename="../src/gui/generalsettings.ui" line="75"/>
+        <source>Use &amp;Monochrome Icons</source>
+        <translation>Koristi jednobojne ikone</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="82"/>
@@ -1453,30 +1384,9 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>Pokreni pri pokretanju sustava</translation>
     </message>
     <message>
-        <location filename="../src/gui/generalsettings.ui" line="75"/>
-        <source>Use &amp;Monochrome Icons</source>
-        <translation>Koristi jednobojne ikone</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="171"/>
-        <source>Edit &amp;Ignored Files</source>
-        <translation>Uredi zanemarene datoteke</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="250"/>
-        <source>Show sync folders in &amp;Explorer&apos;s Navigation Pane</source>
-        <translation>Prikaži mape za sinkronizaciju u navigacijskom oknu preglednika datoteka</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="267"/>
-        <source>S&amp;how crash reporter</source>
-        <translation>Prikaži alat za izvješćivanje o padu sustava</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="20"/>
-        <location filename="../src/gui/generalsettings.ui" line="32"/>
-        <source>About</source>
-        <translation>Informacije</translation>
+        <location filename="../src/gui/generalsettings.ui" line="89"/>
+        <source>Show Server &amp;Notifications</source>
+        <translation>Prikaži poslužitelj i obavijesti</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="99"/>
@@ -1484,12 +1394,58 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
         <translation>Ažuriranja</translation>
     </message>
     <message>
-        <location filename="../src/gui/generalsettings.ui" line="124"/>
+        <location filename="../src/gui/generalsettings.ui" line="107"/>
+        <source>&amp;Automatically check for Updates</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="123"/>
+        <source>&amp;Check for Update now</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="169"/>
         <source>&amp;Restart &amp;&amp; Update</source>
         <translation>Ponovno pokreni i ažuriraj</translation>
     </message>
     <message>
-        <location filename="../src/gui/generalsettings.cpp" line="56"/>
+        <location filename="../src/gui/generalsettings.ui" line="210"/>
+        <source>Advanced</source>
+        <translation>Napredno</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="218"/>
+        <source>Edit &amp;Ignored Files</source>
+        <translation>Uredi zanemarene datoteke</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="242"/>
+        <source>Ask for confirmation before synchronizing folders larger than</source>
+        <translation>Zatraži potvrdu prije sinkronizacije mapa većih od</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="262"/>
+        <source>MB</source>
+        <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
+        <translation>MB</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="286"/>
+        <source>Ask for confirmation before synchronizing external storages</source>
+        <translation>Zatraži potvrdu prije sinkronizacije vanjskih prostora za pohranu</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="297"/>
+        <source>Show sync folders in &amp;Explorer&apos;s Navigation Pane</source>
+        <translation>Prikaži mape za sinkronizaciju u navigacijskom oknu preglednika datoteka</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.ui" line="314"/>
+        <source>S&amp;how crash reporter</source>
+        <translation>Prikaži alat za izvješćivanje o padu sustava</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/generalsettings.cpp" line="59"/>
         <source>Server notifications that require attention.</source>
         <translation>Obavijesti poslužitelja koje zahtijevaju pažnju.</translation>
     </message>
@@ -1497,12 +1453,22 @@ Nastavljanje sinkronizacije uzrokovat će zamjenu svih vaših datoteka starijim 
 <context>
     <name>OCC::GetOrCreatePublicLinkShare</name>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="520"/>
+        <location filename="../src/gui/socketapi.cpp" line="528"/>
+        <source>Password for share required</source>
+        <translation>Potrebna je zaporka za dijeljenje</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/socketapi.cpp" line="529"/>
+        <source>Please enter a password for your link share:</source>
+        <translation>Unesite zaporku svoje poveznice dijeljenja:</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/socketapi.cpp" line="548"/>
         <source>Sharing error</source>
         <translation>Pogreška dijeljenja</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="521"/>
+        <location filename="../src/gui/socketapi.cpp" line="549"/>
         <source>Could not retrieve or create the public link share. Error:
 
 %1</source>
@@ -1622,22 +1588,23 @@ Stavke za koje je dopušteno brisanje bit će izbrisane ako sprječavaju uklanja
 <context>
     <name>OCC::LegalNotice</name>
     <message>
-        <location filename="../src/gui/legalnotice.ui" line="26"/>
+        <location filename="../src/gui/legalnotice.ui" line="14"/>
+        <location filename="../src/gui/legalnotice.ui" line="25"/>
         <source>Legal notice</source>
         <translation>Pravna obavijest</translation>
     </message>
     <message>
-        <location filename="../src/gui/legalnotice.ui" line="58"/>
+        <location filename="../src/gui/legalnotice.ui" line="57"/>
         <source>Close</source>
         <translation>Zatvori</translation>
     </message>
     <message>
-        <location filename="../src/gui/legalnotice.cpp" line="27"/>
-        <source>&lt;p&gt;Copyright 2017-2018 Nextcloud GmbH&lt;br /&gt;Copyright 2012-2018 ownCloud GmbH&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Autorska prava 2017. – 2018. Nextcloud GmbH&lt;br /&gt;Autorska prava 2012. – 2018. ownCloud GmbH&lt;/p&gt;</translation>
+        <location filename="../src/gui/legalnotice.cpp" line="55"/>
+        <source>&lt;p&gt;Copyright 2017-2020 Nextcloud GmbH&lt;br /&gt;Copyright 2012-2018 ownCloud GmbH&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Autorska prava 2017. – 2020. Nextcloud GmbH&lt;br /&gt;Autorska prava 2012. – 2018. ownCloud GmbH&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/legalnotice.cpp" line="30"/>
+        <location filename="../src/gui/legalnotice.cpp" line="58"/>
         <source>&lt;p&gt;Licensed under the GNU General Public License (GPL) Version 2.0 or any later version.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Licencirano pod Općom javnom licencom za GNU (GPL), verzijom 2.0 ili novijom.&lt;/p&gt;</translation>
     </message>
@@ -1730,27 +1697,27 @@ Zapisi se zapisuju u %1</translation>
 <context>
     <name>OCC::NSISUpdater</name>
     <message>
-        <location filename="../src/gui/updater/ocupdater.cpp" line="332"/>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="334"/>
         <source>New Version Available</source>
         <translation>Dostupna je nova inačica</translation>
     </message>
     <message>
-        <location filename="../src/gui/updater/ocupdater.cpp" line="338"/>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="340"/>
         <source>&lt;p&gt;A new version of the %1 Client is available.&lt;/p&gt;&lt;p&gt;&lt;b&gt;%2&lt;/b&gt; is available for download. The installed version is %3.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Dostupna je nova inačica klijenta %1.&lt;/p&gt;&lt;p&gt;&lt;b&gt;%2&lt;/b&gt; je dostupan za preuzimanje. Instalirana je inačica %3.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/updater/ocupdater.cpp" line="352"/>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="354"/>
         <source>Skip this version</source>
         <translation>Preskoči ovu inačicu</translation>
     </message>
     <message>
-        <location filename="../src/gui/updater/ocupdater.cpp" line="353"/>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="355"/>
         <source>Skip this time</source>
         <translation>Preskoči ovaj put</translation>
     </message>
     <message>
-        <location filename="../src/gui/updater/ocupdater.cpp" line="354"/>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="356"/>
         <source>Get update</source>
         <translation>Dohvati ažuriranje</translation>
     </message>
@@ -1783,11 +1750,6 @@ Zapisi se zapisuju u %1</translation>
         <translation>Glavno računalo</translation>
     </message>
     <message>
-        <location filename="../src/gui/networksettings.ui" line="100"/>
-        <source>:</source>
-        <translation>:</translation>
-    </message>
-    <message>
         <location filename="../src/gui/networksettings.ui" line="131"/>
         <source>Proxy server requires authentication</source>
         <translation>Proxy poslužitelj zahtijeva autentifikaciju</translation>
@@ -1804,16 +1766,16 @@ Zapisi se zapisuju u %1</translation>
         <translation>Ograniči na</translation>
     </message>
     <message>
-        <location filename="../src/gui/networksettings.ui" line="241"/>
-        <location filename="../src/gui/networksettings.ui" line="320"/>
-        <source>KBytes/s</source>
-        <translation>KB/s</translation>
-    </message>
-    <message>
         <location filename="../src/gui/networksettings.ui" line="203"/>
         <location filename="../src/gui/networksettings.ui" line="292"/>
         <source>No limit</source>
         <translation>Nema ograničenja</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/networksettings.ui" line="241"/>
+        <location filename="../src/gui/networksettings.ui" line="320"/>
+        <source>KBytes/s</source>
+        <translation>KB/s</translation>
     </message>
     <message>
         <location filename="../src/gui/networksettings.ui" line="250"/>
@@ -1822,15 +1784,15 @@ Zapisi se zapisuju u %1</translation>
         <translation>Ograniči na 3/4 procijenjene propusnosti</translation>
     </message>
     <message>
-        <location filename="../src/gui/networksettings.ui" line="269"/>
-        <source>Upload Bandwidth</source>
-        <translation>Propusnost za otpremanja</translation>
-    </message>
-    <message>
         <location filename="../src/gui/networksettings.ui" line="253"/>
         <location filename="../src/gui/networksettings.ui" line="285"/>
         <source>Limit automatically</source>
         <translation>Ograni automatski</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/networksettings.ui" line="269"/>
+        <source>Upload Bandwidth</source>
+        <translation>Propusnost za otpremanja</translation>
     </message>
     <message>
         <location filename="../src/gui/networksettings.cpp" line="37"/>
@@ -1907,8 +1869,13 @@ dodatne ovlasti tijekom postupka.</translation>
     </message>
     <message>
         <location filename="../src/gui/updater/ocupdater.cpp" line="143"/>
-        <source>Downloading version %1. Please wait...</source>
-        <translation>Preuzimanje inačice %1. Pričekajte...</translation>
+        <source>Downloading version %1. Please wait …</source>
+        <translation>Preuzimanje inačice %1. Pričekajte…</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="145"/>
+        <source>%1 version %2 available. Restart application to start the update.</source>
+        <translation>%1 inačica %2 je dostupna. Ponovno pokrenite aplikaciju kako biste pokrenuli ažuriranje.</translation>
     </message>
     <message>
         <location filename="../src/gui/updater/ocupdater.cpp" line="147"/>
@@ -1921,19 +1888,14 @@ dodatne ovlasti tijekom postupka.</translation>
         <translation>Nije moguće provjeriti ima li novih ažuriranja.</translation>
     </message>
     <message>
-        <location filename="../src/gui/updater/ocupdater.cpp" line="145"/>
-        <source>%1 version %2 available. Restart application to start the update.</source>
-        <translation>%1 inačica %2 je dostupna. Ponovno pokrenite aplikaciju kako biste pokrenuli ažuriranje.</translation>
-    </message>
-    <message>
         <location filename="../src/gui/updater/ocupdater.cpp" line="151"/>
-        <source>New %1 version %2 available. Please use the system&apos;s update tool to install it.</source>
-        <translation>Dostupna je %1 inačica %2. Instalirajte je s pomoću alata za ažuriranje sustava.</translation>
+        <source>New %1 version %2 is available. Please click &lt;a href=&apos;%3&apos;&gt;here&lt;/a&gt; to download the update.</source>
+        <translation>Dostupna je inačica %1 %2. Kliknite &lt;a href=&apos;%3&apos;&gt;ovdje&lt;/a&gt; za preuzimanje ažuriranja.</translation>
     </message>
     <message>
         <location filename="../src/gui/updater/ocupdater.cpp" line="153"/>
-        <source>Checking update server...</source>
-        <translation>Provjera poslužitelja za ažuriranje...</translation>
+        <source>Checking update server …</source>
+        <translation>Provjera poslužitelja za ažuriranje…</translation>
     </message>
     <message>
         <location filename="../src/gui/updater/ocupdater.cpp" line="155"/>
@@ -1965,8 +1927,8 @@ dodatne ovlasti tijekom postupka.</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="61"/>
-        <source>Connect...</source>
-        <translation>Povezivanje...</translation>
+        <source>Connect …</source>
+        <translation>Poveži…</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="159"/>
@@ -2102,29 +2064,29 @@ dodatne ovlasti tijekom postupka.</translation>
         <translation>Dijeljenje zaslona, sastanci na mreži i web konferencije</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="196"/>
-        <source>This url is NOT secure as it is not encrypted.
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="181"/>
+        <source>This URL is NOT secure as it is not encrypted.
 It is not advisable to use it.</source>
         <translation>Ovaj URL NIJE siguran jer nije šifriran.
 Nije preporučljivo koristiti ga.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="200"/>
-        <source>This url is secure. You can use it.</source>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="185"/>
+        <source>This URL is secure. You can use it.</source>
         <translation>Ovaj je URL siguran. Možete ga koristiti.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="239"/>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="224"/>
         <source>&amp;Next &gt;</source>
         <translation>&amp;Sljedeće &gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="299"/>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="284"/>
         <source>Invalid URL</source>
         <translation>Neispravan URL</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="428"/>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="413"/>
         <source>Could not load certificate. Maybe wrong password?</source>
         <translation>Nije moguće učitati vjerodajnicu. Možda je pogrešna zaporka?</translation>
     </message>
@@ -2137,9 +2099,19 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>&lt;font color=&quot;green&quot;&gt;Uspješno povezivanje s %1: %2 inačicom %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="278"/>
+        <source>Invalid URL</source>
+        <translation>Neispravan URL</translation>
+    </message>
+    <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="280"/>
         <source>Failed to connect to %1 at %2:&lt;br/&gt;%3</source>
         <translation>Neuspješno povezivanje s %1 na %2:&lt;br/&gt;%3</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="297"/>
+        <source>The server reported the following error:</source>
+        <translation>Poslužitelj je prijavio sljedeću pogrešku:</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="315"/>
@@ -2148,8 +2120,8 @@ Nije preporučljivo koristiti ga.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="334"/>
-        <source>Trying to connect to %1 at %2...</source>
-        <translation>Pokušaj povezivanja s %1 na %2...</translation>
+        <source>Trying to connect to %1 at %2 …</source>
+        <translation>Pokušaj povezivanja s %1 na %2…</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="385"/>
@@ -2157,124 +2129,114 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Autorizirani zahtjev poslužitelju preusmjeren je na &apos;%1&apos;. URL je neispravan, poslužitelj je pogrešno konfiguriran.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="407"/>
-        <source>There was an invalid response to an authenticated webdav request</source>
-        <translation>Došlo je do nevažećeg odgovora na autorizirani zahtjev za webdav</translation>
-    </message>
-    <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="398"/>
         <source>Access forbidden by server. To verify that you have proper access, &lt;a href=&quot;%1&quot;&gt;click here&lt;/a&gt; to access the service with your browser.</source>
         <translation>Poslužitelj je zabranio pristup. Kako biste provjerili imate li ispravan pristup, &lt;a href=&quot;%1&quot;&gt;kliknite ovdje&lt;/a&gt; kako biste pristupili servisu putem preglednika.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="278"/>
-        <source>Invalid URL</source>
-        <translation>Neispravan URL</translation>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="407"/>
+        <source>There was an invalid response to an authenticated WebDAV request</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="297"/>
-        <source>The server reported the following error:</source>
-        <translation>Poslužitelj je prijavio sljedeću pogrešku:</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="452"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="453"/>
         <source>Local sync folder %1 already exists, setting it up for sync.&lt;br/&gt;&lt;br/&gt;</source>
         <translation>Mapa za lokalnu sinkronizaciju %1 već postoji, postavljanje za sinkronizaciju.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="455"/>
-        <source>Creating local sync folder %1...</source>
-        <translation>Stvaranje mape za lokalnu sinkronizaciju %1...</translation>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="456"/>
+        <source>Creating local sync folder %1 …</source>
+        <translation>Stvaranje mape za lokalnu sinkronizaciju %1…</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="459"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="460"/>
         <source>ok</source>
         <translation>uspješno</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="461"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="462"/>
         <source>failed.</source>
         <translation>neuspješno.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="463"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="464"/>
         <source>Could not create local folder %1</source>
         <translation>Nije moguće stvoriti lokalnu mapu %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="523"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="524"/>
         <source>No remote folder specified!</source>
         <translation>Nije navedena nijedna udaljena mapa!</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="529"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="530"/>
         <source>Error: %1</source>
         <translation>Pogreška: %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="542"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="543"/>
         <source>creating folder on Nextcloud: %1</source>
         <translation>stvaranje mape na Nextcloudu: %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="558"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="559"/>
         <source>Remote folder %1 created successfully.</source>
         <translation>Uspješno je stvorena udaljena mapa %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="560"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="561"/>
         <source>The remote folder %1 already exists. Connecting it for syncing.</source>
         <translation>Udaljena mapa %1 već postoji. Povezivanje radi sinkronizacije.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="562"/>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="564"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="563"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="565"/>
         <source>The folder creation resulted in HTTP error code %1</source>
         <translation>Stvaranje mape rezultiralo je HTTP šifrom pogreške %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="566"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="567"/>
         <source>The remote folder creation failed because the provided credentials are wrong!&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
         <translation>Stvaranje udaljene mape nije uspjelo jer su navedene vjerodajnice pogrešne!&lt;br/&gt;Vratite se i provjerite svoje vjerodajnice.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="570"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="571"/>
         <source>&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Remote folder creation failed probably because the provided credentials are wrong.&lt;/font&gt;&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;font color=“red“&gt;Stvaranje udaljene mape nije uspjelo vjerojatno zbog pogrešnih unesenih vjerodajnica.&lt;/font&gt;&lt;br/&gt;Vratite se i provjerite vjerodajnice.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="575"/>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="576"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="577"/>
         <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
         <translation>Stvaranje udaljene mape %1 nije uspjelo, pogreška: &lt;tt&gt;%2&lt;/tt&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="593"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="594"/>
         <source>A sync connection from %1 to remote directory %2 was set up.</source>
         <translation>Postavljena je sinkronizacijska veza od %1 do udaljenog direktorija %2.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="598"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="599"/>
         <source>Successfully connected to %1!</source>
         <translation>Uspješno povezivanje s %1!</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="605"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="606"/>
         <source>Connection to %1 could not be established. Please check again.</source>
         <translation>Veza s %1 nije uspostavljena. Provjerite opet.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="619"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="620"/>
         <source>Folder rename failed</source>
         <translation>Preimenovanje mape nije uspjelo</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="620"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="621"/>
         <source>Can&apos;t remove and back up the folder because the folder or a file in it is open in another program. Please close the folder or file and hit retry or cancel the setup.</source>
         <translation>Nije moguće ukloniti i izraditi sigurnosnu kopiju mape jer je mapa ili datoteka u njoj otvorena u drugom programu. Zatvorite mapu ili datoteku i pritisnite Pokušaj ponovo ili otkažite postavljanje.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="667"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="668"/>
         <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Local sync folder %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
         <translation>&lt;font color=“green“&gt;&lt;b&gt;Mapa za lokalnu sinkronizaciju %1 uspješno je stvorena!&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
@@ -2282,12 +2244,12 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>OCC::OwncloudWizard</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="93"/>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="94"/>
         <source>%1 Connection Wizard</source>
         <translation>%1 Čarobnjak za povezivanje</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="102"/>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="103"/>
         <source>Skip folders configuration</source>
         <translation>Preskoči konfiguraciju mapa</translation>
     </message>
@@ -2329,52 +2291,52 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>OCC::PropagateDownloadFile</name>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="364"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="357"/>
         <source>File %1 can not be downloaded because encryption information is missing.</source>
         <translation>Datoteka %1 ne može se preuzeti jer nedostaju informacije o šifriranju.</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="434"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="427"/>
         <source>File %1 can not be downloaded because of a local file name clash!</source>
         <translation>Datoteka %1 ne može se preuzeti zbog nepodudaranja naziva lokalne datoteke!</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="484"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="477"/>
         <source>The download would reduce free local disk space below the limit</source>
         <translation>Preuzimanje bi smanjilo slobodni prostor na lokalnom disku ispod granice</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="488"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="481"/>
         <source>Free space on disk is less than %1</source>
         <translation>Slobodan prostor na disku manji je od %1</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="608"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="601"/>
         <source>File was deleted from server</source>
         <translation>Datoteka je izbrisana s poslužitelja</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="661"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="654"/>
         <source>The file could not be downloaded completely.</source>
         <translation>Datoteku nije moguće u potpunosti preuzeti.</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="668"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="661"/>
         <source>The downloaded file is empty despite that the server announced it should have been %1.</source>
         <translation>Preuzeta datoteka je prazna, unatoč tome što je poslužitelj javio da treba iznositi %1.</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="857"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="850"/>
         <source>File %1 cannot be saved because of a local file name clash!</source>
         <translation>Datoteka %1 ne može se spremiti zbog nepodudaranja naziva lokalne datoteke!</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="892"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="885"/>
         <source>File has changed since discovery</source>
         <translation>Datoteka se promijenila od njenog otkrića</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagatedownload.cpp" line="948"/>
+        <location filename="../src/libsync/propagatedownload.cpp" line="941"/>
         <source>Error writing metadata to the database</source>
         <translation>Pogreška pri pisanju metapodataka u bazu podataka</translation>
     </message>
@@ -2490,16 +2452,6 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Datoteka %1 ne može se otpremiti jer postoji druga datoteka s istim nazivom koja se razlikuje samo po velikom/malom slovu</translation>
     </message>
     <message>
-        <location filename="../src/libsync/propagateupload.cpp" line="348"/>
-        <source>Local file changed during syncing. It will be resumed.</source>
-        <translation>Lokalna datoteka je izmijenjena tijekom sinkronizacije. Sinkroniziranje će se nastaviti.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/propagateupload.cpp" line="363"/>
-        <source>Local file changed during sync.</source>
-        <translation>Lokalna datoteka je izmijenjena tijekom sinkronizacije.</translation>
-    </message>
-    <message>
         <location filename="../src/libsync/propagateupload.cpp" line="225"/>
         <location filename="../src/libsync/propagateupload.cpp" line="603"/>
         <source>Upload of %1 exceeds the quota for the folder</source>
@@ -2509,6 +2461,16 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/libsync/propagateupload.cpp" line="334"/>
         <source>File Removed (start upload) %1</source>
         <translation>Datoteka je uklonjena (početak otpremanja) %1</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/propagateupload.cpp" line="348"/>
+        <source>Local file changed during syncing. It will be resumed.</source>
+        <translation>Lokalna datoteka je izmijenjena tijekom sinkronizacije. Sinkroniziranje će se nastaviti.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/propagateupload.cpp" line="363"/>
+        <source>Local file changed during sync.</source>
+        <translation>Lokalna datoteka je izmijenjena tijekom sinkronizacije.</translation>
     </message>
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="685"/>
@@ -2607,8 +2569,8 @@ Nije preporučljivo koristiti ga.</translation>
     <name>OCC::SelectiveSyncWidget</name>
     <message>
         <location filename="../src/gui/selectivesyncdialog.cpp" line="73"/>
-        <source>Loading ...</source>
-        <translation>Učitavanje...</translation>
+        <source>Loading …</source>
+        <translation>Učitavanje…</translation>
     </message>
     <message>
         <location filename="../src/gui/selectivesyncdialog.cpp" line="79"/>
@@ -2653,89 +2615,90 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Postavke</translation>
     </message>
     <message>
-        <location filename="../src/gui/settingsdialog.cpp" line="211"/>
-        <source>Activity</source>
-        <translation>Aktivnost</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/settingsdialog.cpp" line="105"/>
+        <location filename="../src/gui/settingsdialog.cpp" line="101"/>
         <source>General</source>
         <translation>Općenito</translation>
     </message>
     <message>
-        <location filename="../src/gui/settingsdialog.cpp" line="111"/>
+        <location filename="../src/gui/settingsdialog.cpp" line="110"/>
         <source>Network</source>
         <translation>Mreža</translation>
     </message>
     <message>
-        <location filename="../src/gui/settingsdialog.cpp" line="234"/>
+        <location filename="../src/gui/settingsdialog.cpp" line="242"/>
         <source>Account</source>
         <translation>Račun</translation>
     </message>
-</context>
-<context>
-    <name>OCC::SettingsDialogMac</name>
     <message>
-        <location filename="../src/gui/settingsdialogmac.cpp" line="92"/>
-        <source>%1</source>
-        <translation>%1</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/settingsdialogmac.cpp" line="155"/>
+        <location filename="../src/gui/settingsdialog.cpp" line="219"/>
         <source>Activity</source>
         <translation>Aktivnost</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/settingsdialogmac.cpp" line="106"/>
-        <source>General</source>
-        <translation>Općenito</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/settingsdialogmac.cpp" line="110"/>
-        <source>Network</source>
-        <translation>Mreža</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/settingsdialogmac.cpp" line="138"/>
-        <location filename="../src/gui/settingsdialogmac.cpp" line="231"/>
-        <source>Account</source>
-        <translation>Račun</translation>
     </message>
 </context>
 <context>
     <name>OCC::ShareDialog</name>
+    <message>
+        <location filename="../src/gui/sharedialog.ui" line="51"/>
+        <source>share label</source>
+        <translation>oznaka za dijeljenje</translation>
+    </message>
     <message>
         <location filename="../src/gui/sharedialog.ui" line="67"/>
         <source>ownCloud Path:</source>
         <translation>Put ownCloud:</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharedialog.cpp" line="104"/>
-        <source>%1 Sharing</source>
-        <translation>%1 Dijeljenje</translation>
+        <location filename="../src/gui/sharedialog.ui" line="82"/>
+        <source>Nextcloud Path:</source>
+        <translation>Nextcloudov put:</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharedialog.cpp" line="80"/>
+        <location filename="../src/gui/sharedialog.ui" line="113"/>
+        <source>Icon</source>
+        <translation>Ikona</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharedialog.cpp" line="81"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharedialog.cpp" line="101"/>
+        <location filename="../src/gui/sharedialog.cpp" line="102"/>
         <source>Folder: %2</source>
         <translation>Mapa: %2</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharedialog.cpp" line="272"/>
+        <location filename="../src/gui/sharedialog.cpp" line="105"/>
+        <source>%1 Sharing</source>
+        <translation>%1 Dijeljenje</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharedialog.cpp" line="277"/>
         <source>The file can not be shared because it was shared without sharing permission.</source>
         <translation>Datoteku nije moguće dijeliti jer je dijeljena bez dopuštenja.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharedialog.cpp" line="312"/>
+        <source>Password for share required</source>
+        <translation>Potrebna je zaporka za dijeljenje</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharedialog.cpp" line="313"/>
+        <source>Please enter a password for your link share:</source>
+        <translation>Unesite zaporku svoje poveznice dijeljenja:</translation>
     </message>
 </context>
 <context>
     <name>OCC::ShareLinkWidget</name>
     <message>
-        <location filename="../src/gui/sharelinkwidget.ui" line="171"/>
-        <source>&amp;Share link</source>
-        <translation>&amp;Dijeli poveznicu</translation>
+        <location filename="../src/gui/sharelinkwidget.ui" line="38"/>
+        <source>Share link</source>
+        <translation>Dijeli poveznicu</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharelinkwidget.ui" line="133"/>
+        <source>Note:</source>
+        <translation>Bilješka:</translation>
     </message>
     <message>
         <location filename="../src/gui/sharelinkwidget.ui" line="51"/>
@@ -2743,72 +2706,87 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Zaporka:</translation>
     </message>
     <message>
+        <location filename="../src/gui/sharelinkwidget.ui" line="171"/>
+        <source>&amp;Share link</source>
+        <translation>&amp;Dijeli poveznicu</translation>
+    </message>
+    <message>
         <location filename="../src/gui/sharelinkwidget.ui" line="239"/>
         <source>Expiration date:</source>
         <translation>Datum isteka:</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="410"/>
-        <source>Delete</source>
-        <translation>Izbriši</translation>
+        <location filename="../src/gui/sharelinkwidget.ui" line="245"/>
+        <source>Expires:</source>
+        <translation>Istječe:</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="149"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="150"/>
         <source>Allow Editing</source>
         <translation>Dopusti uređivanje</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="155"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="156"/>
         <source>Read only</source>
         <translation>Samo za čitanje</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="163"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="164"/>
         <source>Allow Upload &amp;&amp; Editing</source>
         <translation>Dopusti otpremanje i uređivanje</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="168"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="169"/>
         <source>File Drop (Upload Only)</source>
         <translation>Povlačenje datoteke (samo za otpremanje)</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="183"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="189"/>
+        <source>Add note to recipient</source>
+        <translation>Dodaj bilješku primatelju</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="184"/>
         <source>Password Protect</source>
         <translation>Zaštita zaporkom</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="200"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="201"/>
         <source>Expiration Date</source>
         <translation>Datum isteka</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="219"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="220"/>
         <source>Unshare</source>
         <translation>Prestani dijeliti</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="224"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="225"/>
         <source>Add another link</source>
         <translation>Dodaj drugu poveznicu</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="403"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="406"/>
         <source>Confirm Link Share Deletion</source>
         <translation>Potvrdi brisanje dijeljenja poveznicom</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="404"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="407"/>
         <source>&lt;p&gt;Do you really want to delete the public link share &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;Note: This action cannot be undone.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Želite li zaista izbrisati dijeljenje javnom poveznicom &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;Napomena: ovu radnju ne možete poništiti.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="411"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="413"/>
+        <source>Delete</source>
+        <translation>Izbriši</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="414"/>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>
     <message>
-        <location filename="../src/gui/sharelinkwidget.cpp" line="429"/>
+        <location filename="../src/gui/sharelinkwidget.cpp" line="432"/>
         <source>Public link</source>
         <translation>Javna poveznica</translation>
     </message>
@@ -2817,21 +2795,21 @@ Nije preporučljivo koristiti ga.</translation>
     <name>OCC::ShareUserGroupWidget</name>
     <message>
         <location filename="../src/gui/shareusergroupwidget.ui" line="59"/>
-        <source>Share with users or groups ...</source>
+        <source>Share with users or groups …</source>
         <translation>Dijelite s korisnicima ili grupama...</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="259"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="267"/>
         <source>Copy link</source>
         <translation>Kopiraj poveznicu</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="269"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="277"/>
         <source>No results for &apos;%1&apos;</source>
         <translation>Nema rezultata za ‘%1’</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="356"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="364"/>
         <source>I shared something with you</source>
         <translation>Dijelim nešto s vama</translation>
     </message>
@@ -2840,7 +2818,7 @@ Nije preporučljivo koristiti ga.</translation>
     <name>OCC::ShareUserLine</name>
     <message>
         <location filename="../src/gui/shareuserline.ui" line="66"/>
-        <source>User name</source>
+        <source>Username</source>
         <translation>Korisničko ime</translation>
     </message>
     <message>
@@ -2849,27 +2827,27 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>uređivanje moguće</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="385"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="412"/>
         <source>Can reshare</source>
         <translation>Ponovno dijeljenje moguće</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="395"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="422"/>
         <source>Unshare</source>
         <translation>Prestani dijeliti</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="404"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="431"/>
         <source>Can create</source>
         <translation>Stvaranje moguće</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="410"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="437"/>
         <source>Can change</source>
         <translation>Mijenjanje moguće</translation>
     </message>
     <message>
-        <location filename="../src/gui/shareusergroupwidget.cpp" line="416"/>
+        <location filename="../src/gui/shareusergroupwidget.cpp" line="443"/>
         <source>Can delete</source>
         <translation>Brisanje moguće</translation>
     </message>
@@ -2913,60 +2891,65 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>OCC::SocketApi</name>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="457"/>
+        <location filename="../src/gui/socketapi.cpp" line="465"/>
         <source>Share with %1</source>
         <comment>parameter is Nextcloud</comment>
         <translation>Dijeli s %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="491"/>
+        <location filename="../src/gui/socketapi.cpp" line="501"/>
         <source>Context menu share</source>
         <translation>Dijeljenje kontekstnog izbornika</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="612"/>
+        <location filename="../src/gui/socketapi.cpp" line="658"/>
         <source>I shared something with you</source>
         <translation>Dijelim nešto s vama</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="625"/>
-        <location filename="../src/gui/socketapi.cpp" line="655"/>
+        <location filename="../src/gui/socketapi.cpp" line="671"/>
+        <location filename="../src/gui/socketapi.cpp" line="701"/>
         <source>Share options</source>
-        <translation type="unfinished"/>
+        <translation>Mogućnosti dijeljenja</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="626"/>
-        <source>Share via </source>
-        <translation type="unfinished"/>
+        <location filename="../src/gui/socketapi.cpp" line="672"/>
+        <source>Share via %1</source>
+        <translation>Dijeli putem %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="627"/>
+        <location filename="../src/gui/socketapi.cpp" line="673"/>
         <source>Copy private link to clipboard</source>
         <translation>Kopiraj privatnu poveznicu u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="628"/>
-        <source>Send private link by email...</source>
-        <translation>Pošalji privatnu poveznicu e-poštom...</translation>
+        <location filename="../src/gui/socketapi.cpp" line="674"/>
+        <source>Send private link by email …</source>
+        <translation>Pošalji privatnu poveznicu e-poštom…</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="653"/>
+        <location filename="../src/gui/socketapi.cpp" line="699"/>
         <source>Resharing this file is not allowed</source>
         <translation>Dijeljenje ove datoteke nije dopušteno</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="666"/>
-        <location filename="../src/gui/socketapi.cpp" line="668"/>
+        <location filename="../src/gui/socketapi.cpp" line="712"/>
+        <location filename="../src/gui/socketapi.cpp" line="714"/>
         <source>Copy public link</source>
-        <translation type="unfinished"/>
+        <translation>Kopiraj javnu poveznicu</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="672"/>
+        <location filename="../src/gui/socketapi.cpp" line="718"/>
         <source>Copy internal link</source>
-        <translation type="unfinished"/>
+        <translation>Kopiraj internu poveznicu</translation>
     </message>
     <message>
-        <location filename="../src/gui/socketapi.cpp" line="722"/>
+        <location filename="../src/gui/socketapi.cpp" line="807"/>
+        <source>Edit</source>
+        <translation>Uredi</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/socketapi.cpp" line="768"/>
         <source>Open in browser</source>
         <translation>Otvori u pregledniku</translation>
     </message>
@@ -3071,9 +3054,16 @@ Nije preporučljivo koristiti ga.</translation>
 </translation>
     </message>
     <message>
+        <location filename="../src/gui/sslbutton.cpp" line="177"/>
+        <source>This connection is NOT secure as it is not encrypted.
+</source>
+        <translation>Ova veza NIJE sigurna jer nije šifrirana.
+</translation>
+    </message>
+    <message>
         <location filename="../src/gui/sslbutton.cpp" line="191"/>
         <source>Server version: %1</source>
-        <translation type="unfinished"/>
+        <translation>Inačica poslužitelja: %1</translation>
     </message>
     <message>
         <location filename="../src/gui/sslbutton.cpp" line="205"/>
@@ -3088,14 +3078,7 @@ Nije preporučljivo koristiti ga.</translation>
     <message>
         <location filename="../src/gui/sslbutton.cpp" line="244"/>
         <source>The connection is not secure</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/gui/sslbutton.cpp" line="177"/>
-        <source>This connection is NOT secure as it is not encrypted.
-</source>
-        <translation>Ova veza NIJE sigurna jer nije šifrirana.
-</translation>
+        <translation>Veza nije sigurna</translation>
     </message>
 </context>
 <context>
@@ -3184,92 +3167,6 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Uspjeh.</translation>
     </message>
     <message>
-        <location filename="../src/libsync/syncengine.cpp" line="132"/>
-        <source>A network connection timeout happened.</source>
-        <translation>Došlo je do isteka mrežne veze.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="135"/>
-        <source>A HTTP transmission error happened.</source>
-        <translation>Došlo je do pogreške HTTP prijenosa.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="159"/>
-        <source>The mounted folder is temporarily not available on the server</source>
-        <translation>Postavljena mapa privremeno nije dostupna na poslužitelju</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="165"/>
-        <source>An error occurred while opening a folder</source>
-        <translation>Došlo je do pogreške prilikom otvaranja mape</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="168"/>
-        <source>Error while reading folder.</source>
-        <translation>Pogreška tijekom čitanja mape.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="244"/>
-        <source>%1 (skipped due to earlier error, trying again in %2)</source>
-        <translation>%1 (preskočeno zbog prethodne pogreške, pokušajte ponovno za %2)</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="516"/>
-        <source>File/Folder is ignored because it&apos;s hidden.</source>
-        <translation>Datoteka/mapa se zanemaruje jer je skrivena.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="519"/>
-        <source>Folder hierarchy is too deep</source>
-        <translation>Hijerarhija mapa je previše duboka</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="535"/>
-        <source>Conflict: Server version downloaded, local copy renamed and not uploaded.</source>
-        <translation>Nepodudaranje: preuzeta inačica poslužitelja, lokalna kopija preimenovana i nije otpremljena.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="801"/>
-        <source>Only %1 are available, need at least %2 to start</source>
-        <comment>Placeholders are postfixed with file sizes using Utility::octetsToString()</comment>
-        <translation>Dostupno je samo %1, za pokretanje je potrebno najmanje %2</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="836"/>
-        <source>Unable to open or create the local sync database. Make sure you have write access in the sync folder.</source>
-        <translation>Nije moguće otvoriti ili stvoriti lokalnu sinkronizacijsku bazu podataka. Provjerite imate li pristup pisanju u mapi za sinkronizaciju.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="1350"/>
-        <source>Not allowed because you don&apos;t have permission to add parent folder</source>
-        <translation>Nije dopušteno jer nemate dopuštenje za dodavanje nadređene mape</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="1357"/>
-        <source>Not allowed because you don&apos;t have permission to add files in that folder</source>
-        <translation>Nije dopušteno jer nemate dopuštenje za dodavanje datoteka u tu mapu</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="1690"/>
-        <source>Disk space is low: Downloads that would reduce free space below %1 were skipped.</source>
-        <translation>Premalo prostora na disku: preskočena su preuzimanja koja bi smanjila slobodni prostor ispod %1.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="1697"/>
-        <source>There is insufficient space available on the server for some uploads.</source>
-        <translation>Na nekim poslužiteljima nema dovoljno slobodnog prostora za određene otpreme.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="150"/>
-        <source>CSync unspecified error.</source>
-        <translation>Pogreška u CSyncu.</translation>
-    </message>
-    <message>
-        <location filename="../src/libsync/syncengine.cpp" line="153"/>
-        <source>Aborted by the user</source>
-        <translation>Prekinuo korisnik</translation>
-    </message>
-    <message>
         <location filename="../src/libsync/syncengine.cpp" line="125"/>
         <source>Failed to load or create the journal file. Make sure you have read and write permissions in the local sync folder.</source>
         <translation>Nije moguće učitati ili stvoriti lokalnu datoteku dnevnika. Provjerite imate li ovlasti za čitanje i pisanje u mapi za lokalnu sinkronizaciju.</translation>
@@ -3278,6 +3175,16 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/libsync/syncengine.cpp" line="129"/>
         <source>Discovery step failed.</source>
         <translation>Korak otkrivanja nije uspio.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="132"/>
+        <source>A network connection timeout happened.</source>
+        <translation>Došlo je do isteka mrežne veze.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="135"/>
+        <source>A HTTP transmission error happened.</source>
+        <translation>Došlo je do pogreške HTTP prijenosa.</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncengine.cpp" line="138"/>
@@ -3300,9 +3207,24 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Nema dostupnog prostora na poslužitelju %1.</translation>
     </message>
     <message>
+        <location filename="../src/libsync/syncengine.cpp" line="150"/>
+        <source>CSync unspecified error.</source>
+        <translation>Pogreška u CSyncu.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="153"/>
+        <source>Aborted by the user</source>
+        <translation>Prekinuo korisnik</translation>
+    </message>
+    <message>
         <location filename="../src/libsync/syncengine.cpp" line="156"/>
         <source>The service is temporarily unavailable</source>
         <translation>Servis je privremeno nedostupan</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="159"/>
+        <source>The mounted folder is temporarily not available on the server</source>
+        <translation>Postavljena mapa privremeno nije dostupna na poslužitelju</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncengine.cpp" line="162"/>
@@ -3310,9 +3232,24 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Pristup je zabranjen</translation>
     </message>
     <message>
+        <location filename="../src/libsync/syncengine.cpp" line="165"/>
+        <source>An error occurred while opening a folder</source>
+        <translation>Došlo je do pogreške prilikom otvaranja mape</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="168"/>
+        <source>Error while reading folder.</source>
+        <translation>Pogreška tijekom čitanja mape.</translation>
+    </message>
+    <message>
         <location filename="../src/libsync/syncengine.cpp" line="173"/>
         <source>An internal error number %1 occurred.</source>
         <translation>Došlo je do pogreške pod internim brojem %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="244"/>
+        <source>%1 (skipped due to earlier error, trying again in %2)</source>
+        <translation>%1 (preskočeno zbog prethodne pogreške, pokušajte ponovno za %2)</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncengine.cpp" line="485"/>
@@ -3350,6 +3287,16 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>Naziv datoteke je predugačak.</translation>
     </message>
     <message>
+        <location filename="../src/libsync/syncengine.cpp" line="516"/>
+        <source>File/Folder is ignored because it&apos;s hidden.</source>
+        <translation>Datoteka/mapa se zanemaruje jer je skrivena.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="519"/>
+        <source>Folder hierarchy is too deep</source>
+        <translation>Hijerarhija mapa je previše duboka</translation>
+    </message>
+    <message>
         <location filename="../src/libsync/syncengine.cpp" line="522"/>
         <source>The filename cannot be encoded on your file system.</source>
         <translation>Naziv datoteke ne može se kodirati u vašem datotečnom sustavu.</translation>
@@ -3358,6 +3305,11 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/libsync/syncengine.cpp" line="531"/>
         <source>Unresolved conflict.</source>
         <translation>Neriješeno nepodudaranje.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="535"/>
+        <source>Conflict: Server version downloaded, local copy renamed and not uploaded.</source>
+        <translation>Nepodudaranje: preuzeta inačica poslužitelja, lokalna kopija preimenovana i nije otpremljena.</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncengine.cpp" line="539"/>
@@ -3373,6 +3325,17 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/libsync/syncengine.cpp" line="731"/>
         <source>Invalid characters, please rename &quot;%1&quot;</source>
         <translation>Nevažeći znakovi, preimenujte „%1”</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="801"/>
+        <source>Only %1 are available, need at least %2 to start</source>
+        <comment>Placeholders are postfixed with file sizes using Utility::octetsToString()</comment>
+        <translation>Dostupno je samo %1, za pokretanje je potrebno najmanje %2</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="836"/>
+        <source>Unable to open or create the local sync database. Make sure you have write access in the sync folder.</source>
+        <translation>Nije moguće otvoriti ili stvoriti lokalnu sinkronizacijsku bazu podataka. Provjerite imate li pristup pisanju u mapi za sinkronizaciju.</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncengine.cpp" line="864"/>
@@ -3404,6 +3367,16 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/libsync/syncengine.cpp" line="1335"/>
         <source>Not allowed because you don&apos;t have permission to add subfolders to that folder</source>
         <translation>Nije dopušteno jer nemate dopuštenje za dodavanje podmapa u tu mapu</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="1350"/>
+        <source>Not allowed because you don&apos;t have permission to add parent folder</source>
+        <translation>Nije dopušteno jer nemate dopuštenje za dodavanje nadređene mape</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="1357"/>
+        <source>Not allowed because you don&apos;t have permission to add files in that folder</source>
+        <translation>Nije dopušteno jer nemate dopuštenje za dodavanje datoteka u tu mapu</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncengine.cpp" line="1382"/>
@@ -3441,6 +3414,16 @@ Nije preporučljivo koristiti ga.</translation>
         <source>the source</source>
         <translation>izvor</translation>
     </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="1690"/>
+        <source>Disk space is low: Downloads that would reduce free space below %1 were skipped.</source>
+        <translation>Premalo prostora na disku: preskočena su preuzimanja koja bi smanjila slobodni prostor ispod %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/syncengine.cpp" line="1697"/>
+        <source>There is insufficient space available on the server for some uploads.</source>
+        <translation>Na nekim poslužiteljima nema dovoljno slobodnog prostora za određene otpreme.</translation>
+    </message>
 </context>
 <context>
     <name>OCC::SyncLogDialog</name>
@@ -3461,25 +3444,83 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="352"/>
+        <location filename="../src/libsync/theme.cpp" line="357"/>
+        <source>&lt;p&gt;%1 Desktop Client&lt;/p&gt;</source>
+        <extracomment>Example text: &quot;&lt;p&gt;Nextcloud Desktop Client&lt;/p&gt;&quot; (%1 is the application name)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/libsync/theme.cpp" line="360"/>
+        <location filename="../src/libsync/theme.cpp" line="370"/>
         <source>&lt;p&gt;Version %1. For more information please click &lt;a href=&apos;%2&apos;&gt;here&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Inačica %1. Za više informacija kliknite &lt;a href=’%2’&gt;ovdje&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="356"/>
+        <location filename="../src/libsync/theme.cpp" line="374"/>
         <source>&lt;p&gt;This release was supplied by %1&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ovo izdanje isporučuje %1&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
+    <name>OCC::User</name>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="319"/>
+        <source>Retry all uploads</source>
+        <translation>Ponovno pokreni sve otpreme</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="368"/>
+        <source>You renamed</source>
+        <translation>Preimenovali ste</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="370"/>
+        <source>You deleted</source>
+        <translation>Izbrisali ste</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="372"/>
+        <source>You created</source>
+        <translation>Stvorili ste</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="374"/>
+        <source>You changed</source>
+        <translation>Promijenili ste</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::UserModel</name>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="690"/>
+        <source>Confirm Account Removal</source>
+        <translation>Potvrdi brisanje računa</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="691"/>
+        <source>&lt;p&gt;Do you really want to remove the connection to the account &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This will &lt;b&gt;not&lt;/b&gt; delete any files.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Želite li zaista ukloniti vezu s računom &lt;i&gt;%1&lt;/i&gt;?&lt;/p&gt;&lt;p&gt;&lt;b&gt;Napomena:&lt;/b&gt; time &lt;b&gt;nećete&lt;/b&gt; izbrisati datoteke.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="696"/>
+        <source>Remove connection</source>
+        <translation>Ukloni vezu</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/UserModel.cpp" line="697"/>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+</context>
+<context>
     <name>OCC::WebEnginePage</name>
     <message>
-        <location filename="../src/gui/wizard/webview.cpp" line="208"/>
+        <location filename="../src/gui/wizard/webview.cpp" line="210"/>
         <source>Invalid certificate detected</source>
         <translation>Otkrivena je nevažeća vjerodajnica</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/webview.cpp" line="209"/>
+        <location filename="../src/gui/wizard/webview.cpp" line="211"/>
         <source>The host &quot;%1&quot; provided an invalid certificate. Continue?</source>
         <translation>Računalo „%1” isporučilo je nevažeću vjerodajnicu. Nastaviti?</translation>
     </message>
@@ -3487,267 +3528,265 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>OCC::WebFlowCredentials</name>
     <message>
-        <location filename="../src/gui/creds/webflowcredentials.cpp" line="162"/>
+        <location filename="../src/gui/creds/webflowcredentials.cpp" line="169"/>
         <source>You have been logged out of %1 as user %2. Please login again</source>
         <translation>Odjavljeni ste iz %1 kao korisnik %2. Prijavite se ponovno</translation>
     </message>
     <message>
-        <location filename="../src/gui/creds/webflowcredentials.cpp" line="179"/>
+        <location filename="../src/gui/creds/webflowcredentials.cpp" line="193"/>
         <source>Please login with the user: %1</source>
         <translation>Prijavite se kao korisnik: %1</translation>
     </message>
 </context>
 <context>
+    <name>OCC::WebFlowCredentialsDialog</name>
+    <message>
+        <location filename="../src/gui/creds/webflowcredentialsdialog.cpp" line="34"/>
+        <source>Log in</source>
+        <translation>Prijava</translation>
+    </message>
+</context>
+<context>
     <name>OCC::ownCloudGui</name>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="302"/>
-        <source>Please sign in</source>
-        <translation>Prijavite se</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="348"/>
-        <source>Folder %1: %2</source>
-        <translation>Mapa %1: %2</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="366"/>
-        <source>There are no sync folders configured.</source>
-        <translation>Nema konfiguriranih mapa za sinkronizaciju.</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="375"/>
-        <source>Open in browser</source>
-        <translation>Otvori u pregledniku</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="424"/>
-        <source>Log in...</source>
-        <translation>Prijava...</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="428"/>
-        <source>Log out</source>
-        <translation>Odjava</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="523"/>
-        <source>Recent Changes</source>
-        <translation>Nedavne promjene</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="402"/>
-        <source>Managed Folders:</source>
-        <translation>Upravljane mape:</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="405"/>
-        <source>Open folder &apos;%1&apos;</source>
-        <translation>Otvori mapu &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="377"/>
-        <source>Open %1 in browser</source>
-        <translation>Otvori %1 u pregledniku</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="785"/>
-        <source>Unknown status</source>
-        <translation>Nepoznati status</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="789"/>
-        <source>Settings...</source>
-        <translation>Postavke...</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="797"/>
-        <source>Help</source>
-        <translation>Pomoć</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="799"/>
-        <source>Quit %1</source>
-        <translation>Zatvori %1</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="283"/>
-        <source>Disconnected from %1</source>
-        <translation>Odspojen od %1</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="233"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="224"/>
         <source>Unsupported Server Version</source>
         <translation>Nepodržana inačica poslužitelja</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="234"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="225"/>
         <source>The server on account %1 runs an old and unsupported version %2. Using this client with unsupported server versions is untested and potentially dangerous. Proceed at your own risk.</source>
         <translation>Poslužitelj na računu %1 koristi se starom i nepodržanom inačicom %2. Upotreba ovog klijenta s nepodržanim inačicama poslužitelja nije testirana i potencijalno je opasna. Nastavite na vlastitu odgovornost.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="273"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="264"/>
         <source>Disconnected</source>
         <translation>Odspojen</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="275"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="266"/>
         <source>Disconnected from some accounts</source>
         <translation>Odspojen od nekih računa</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="286"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="274"/>
+        <source>Disconnected from %1</source>
+        <translation>Odspojen od %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="277"/>
         <source>Disconnected from accounts:</source>
         <translation>Odspojen od računa:</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="288"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="279"/>
         <source>Account %1: %2</source>
         <translation>Račun %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="303"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="293"/>
+        <source>Please sign in</source>
+        <translation>Prijavite se</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="294"/>
         <source>Signed out</source>
         <translation>Odjavljen</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="307"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="298"/>
         <source>Account synchronization is disabled</source>
         <translation>Sinkronizacija računa je onemogućena</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="308"/>
-        <location filename="../src/gui/owncloudgui.cpp" line="361"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="299"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="352"/>
         <source>Synchronization is paused</source>
         <translation>Sinkronizacija je pauzirana</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="356"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="339"/>
+        <source>Folder %1: %2</source>
+        <translation>Mapa %1: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="347"/>
         <source>Unresolved conflicts</source>
         <translation>Neriješena nepodudaranja</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="363"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="349"/>
+        <source>Up to date</source>
+        <translation>Ažurno</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="354"/>
         <source>Error during synchronization</source>
         <translation>Pogreška tijekom sinkronizacije</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="367"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="357"/>
+        <source>There are no sync folders configured.</source>
+        <translation>Nema konfiguriranih mapa za sinkronizaciju.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="358"/>
         <source>No sync folders configured</source>
         <translation>Nije konfigurirana nijedna mapa za sinkronizaciju</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="413"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="366"/>
+        <source>Open in browser</source>
+        <translation>Otvori u pregledniku</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="368"/>
+        <source>Open %1 in browser</source>
+        <translation>Otvori %1 u pregledniku</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="393"/>
+        <source>Managed Folders:</source>
+        <translation>Upravljane mape:</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="396"/>
+        <source>Open folder &apos;%1&apos;</source>
+        <translation>Otvori mapu &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="404"/>
         <source>Resume all folders</source>
         <translation>Nastavi sve mape</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="418"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="409"/>
         <source>Pause all folders</source>
         <translation>Pauziraj sve mape</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="701"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="415"/>
+        <source>Log in …</source>
+        <translation>Prijava…</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="937"/>
+        <source>Syncing %1 of %2 (%3 left)</source>
+        <translation>Sinkronizacija %1 od %2 (preostalo %3)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="419"/>
+        <source>Log out</source>
+        <translation>Odjava</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="942"/>
+        <source>Syncing %1 of %2</source>
+        <translation>Sinkronizacija %1 od %2</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="951"/>
+        <source>Syncing %1 (%2 left)</source>
+        <translation>Sinkronizacija %1 (preostalo %2)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="954"/>
+        <source>Syncing %1</source>
+        <translation>Sinkronizacija %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="972"/>
+        <source>%1 (%2, %3)</source>
+        <translation>%1 (%2, %3)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="514"/>
+        <source>Recent Changes</source>
+        <translation>Nedavne promjene</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="692"/>
         <source>Resume all synchronization</source>
         <translation>Nastavi sve sinkronizacije</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="703"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="694"/>
         <source>Resume synchronization</source>
         <translation>Nastavi sinkronizaciju</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="711"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="702"/>
         <source>Pause all synchronization</source>
         <translation>Zaustavi sve sinkronizacije</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="713"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="704"/>
         <source>Pause synchronization</source>
         <translation>Pauziraj sinkronizaciju</translation>
     </message>
     <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="776"/>
+        <source>Unknown status</source>
+        <translation>Nepoznati status</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="778"/>
+        <source>Apps</source>
+        <translation>Aplikacije</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="780"/>
+        <source>Settings …</source>
+        <translation>Postavke…</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="781"/>
+        <source>New account …</source>
+        <translation>Novi račun…</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="782"/>
+        <source>View more activity …</source>
+        <translation>Prikaži više aktivnosti…</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudgui.cpp" line="788"/>
+        <source>Help</source>
+        <translation>Pomoć</translation>
+    </message>
+    <message>
         <location filename="../src/gui/owncloudgui.cpp" line="790"/>
-        <source>New account...</source>
-        <translation>Novi račun...</translation>
+        <source>Quit %1</source>
+        <translation>Zatvori %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="791"/>
-        <source>View more activity...</source>
-        <translation>Prikaži više aktivnosti...</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="803"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="794"/>
         <source>Crash now</source>
         <comment>Only shows in debug mode to allow testing the crash handler</comment>
         <translation>Sruši se</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="787"/>
-        <source>Apps</source>
-        <translation>Aplikacije</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="903"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="897"/>
         <source>No items synced recently</source>
         <translation>Nije sinkronizirana nijedna stavka nedavno</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="925"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="919"/>
         <source>Checking for changes in remote &apos;%1&apos;</source>
         <translation>Provjera za promjene u udaljenom ‘%1’</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="928"/>
+        <location filename="../src/gui/owncloudgui.cpp" line="922"/>
         <source>Checking for changes in local &apos;%1&apos;</source>
         <translation>Provjera za promjene u lokalnom ‘%1’</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="943"/>
-        <source>Syncing %1 of %2  (%3 left)</source>
-        <translation>Sinkronizacija %1 od %2 (preostalo %3)</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="948"/>
-        <source>Syncing %1 of %2</source>
-        <translation>Sinkronizacija %1 od %2</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="957"/>
-        <source>Syncing %1 (%2 left)</source>
-        <translation>Sinkronizacija %1 (preostalo %2)</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="960"/>
-        <source>Syncing %1</source>
-        <translation>Sinkronizacija %1</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="978"/>
-        <source>%1 (%2, %3)</source>
-        <translation>%1 (%2, %3)</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="358"/>
-        <source>Up to date</source>
-        <translation>Ažurno</translation>
     </message>
 </context>
 <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="304"/>
-        <source>Server</source>
-        <translation>Poslužitelj</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="354"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ako je ovaj okvir označen, postojeći sadržaj u lokalnoj mapi bit će izbrisan kako bi se pokrenula nova sinkronizacija s poslužitelja.&lt;/p&gt;&lt;p&gt;Nemojte označavati okvir ako lokalni sadržaj treba otpremiti u mapu poslužitelja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="357"/>
-        <source>Start a &amp;clean sync (Erases the local folder!)</source>
-        <translation>Pokreni novu sinkronizaciju (briše lokalnu mapu!)</translation>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="90"/>
+        <source>S&amp;ync everything from server</source>
+        <translation>Sinkroniziraj sve s poslužitelja</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="148"/>
@@ -3776,14 +3815,24 @@ Nije preporučljivo koristiti ga.</translation>
         <translation>&amp;Lokalna mapa</translation>
     </message>
     <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="304"/>
+        <source>Server</source>
+        <translation>Poslužitelj</translation>
+    </message>
+    <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="344"/>
         <source>&amp;Keep local data</source>
         <translation>&amp;Zadrži lokalne podatke</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="90"/>
-        <source>S&amp;ync everything from server</source>
-        <translation>Sinkroniziraj sve s poslužitelja</translation>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="354"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ako je ovaj okvir označen, postojeći sadržaj u lokalnoj mapi bit će izbrisan kako bi se pokrenula nova sinkronizacija s poslužitelja.&lt;/p&gt;&lt;p&gt;Nemojte označavati okvir ako lokalni sadržaj treba otpremiti u mapu poslužitelja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="357"/>
+        <source>Start a &amp;clean sync (Erases the local folder!)</source>
+        <translation>Pokreni novu sinkronizaciju (briše lokalnu mapu!)</translation>
     </message>
 </context>
 <context>
@@ -3825,6 +3874,11 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>OwncloudSetupPage</name>
     <message>
+        <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="194"/>
+        <source>Server Address</source>
+        <translation>Adresa poslužitelja</translation>
+    </message>
+    <message>
         <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="343"/>
         <source>Register with a provider</source>
         <translation>Registriraj se kod davatelja usluga</translation>
@@ -3833,11 +3887,6 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="365"/>
         <source>Log in</source>
         <translation>Prijava</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="194"/>
-        <source>Server Address</source>
-        <translation>Adresa poslužitelja</translation>
     </message>
 </context>
 <context>
@@ -3850,11 +3899,6 @@ Nije preporučljivo koristiti ga.</translation>
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <location filename="../src/common/utility.cpp" line="463"/>
-        <source>in the future</source>
-        <translation>u budućnosti</translation>
-    </message>
     <message numerus="yes">
         <location filename="../src/common/utility.cpp" line="457"/>
         <source>%n day ago</source>
@@ -3864,6 +3908,11 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/common/utility.cpp" line="459"/>
         <source>%n days ago</source>
         <translation><numerusform>Prije %n dana</numerusform><numerusform>Prije %n dana</numerusform><numerusform>Prije %n dana</numerusform></translation>
+    </message>
+    <message>
+        <location filename="../src/common/utility.cpp" line="463"/>
+        <source>in the future</source>
+        <translation>u budućnosti</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/common/utility.cpp" line="469"/>
@@ -3986,12 +4035,12 @@ Nije preporučljivo koristiti ga.</translation>
 <context>
     <name>main.cpp</name>
     <message>
-        <location filename="../src/gui/main.cpp" line="39"/>
+        <location filename="../src/gui/main.cpp" line="41"/>
         <source>System Tray not available</source>
         <translation>Ladica sustava nije dostupna</translation>
     </message>
     <message>
-        <location filename="../src/gui/main.cpp" line="40"/>
+        <location filename="../src/gui/main.cpp" line="42"/>
         <source>%1 requires on a working system tray. If you are running XFCE, please follow &lt;a href=&quot;http://docs.xfce.org/xfce/xfce4-panel/systray&quot;&gt;these instructions&lt;/a&gt;. Otherwise, please install a system tray application such as &apos;trayer&apos; and try again.</source>
         <translation>%1 je tražen na radnoj ladici sustava. Ako upotrebljavate XFCE, slijedite &lt;a href=“http://docs.xfce.org/xfce/xfce4-panel/systray“&gt;ove upute&lt;/a&gt;. U suprotnom instalirajte aplikaciju ladice sustava kao što je „trayer” i pokušajte ponovno.</translation>
     </message>
@@ -4138,8 +4187,8 @@ Nije preporučljivo koristiti ga.</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="86"/>
-        <source>Aborting...</source>
-        <translation>Prekidanje...</translation>
+        <source>Aborting …</source>
+        <translation>Prekidanje…</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="89"/>
@@ -4168,6 +4217,52 @@ Nije preporučljivo koristiti ga.</translation>
         <location filename="../src/gui/guiutility.cpp" line="59"/>
         <source>There was an error when launching the email client to create a new message. Maybe no default email client is configured?</source>
         <translation>Došlo je do pogreške prilikom pokretanja preglednika radi stvaranja nove poruke. Možda nije konfiguriran zadani klijent e-pošte?</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::ActivityItemDelegate</name>
+    <message>
+        <location filename="../src/gui/activityitemdelegate.cpp" line="229"/>
+        <source>More information</source>
+        <translation>Više informacija</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activityitemdelegate.cpp" line="230"/>
+        <source>Accept</source>
+        <translation>Prihvati</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activityitemdelegate.cpp" line="231"/>
+        <source>Join</source>
+        <translation>Pridruži se</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activityitemdelegate.cpp" line="252"/>
+        <source>Open Browser</source>
+        <translation>Otvori preglednik</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::ActivityWidget</name>
+    <message>
+        <location filename="../src/gui/activitywidget.cpp" line="56"/>
+        <source>Accept</source>
+        <translation>Prihvati</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activitywidget.cpp" line="192"/>
+        <source>Synced</source>
+        <translation>Sinkronizirano</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activitywidget.cpp" line="231"/>
+        <source>Retry all uploads</source>
+        <translation>Ponovno pokreni sve otpreme</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activitywidget.cpp" line="346"/>
+        <source>&lt;br/&gt;Account %1 does not have activities enabled.</source>
+        <translation>&lt;br/&gt;Račun %1 nema omogućenih aktivnosti.</translation>
     </message>
 </context>
 </TS>

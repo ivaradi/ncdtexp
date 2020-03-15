@@ -38,7 +38,6 @@ namespace Ui {
 }
 
 class AbstractCredentials;
-class QuotaInfo;
 class SyncResult;
 class Share;
 class Sharee;
@@ -64,9 +63,11 @@ public:
 
 signals:
     void togglePublicLinkShare(bool);
+    void styleChanged();
 
 public slots:
     void getShares();
+    void slotStyleChanged();
 
 private slots:
     void slotSharesFetched(const QList<QSharedPointer<Share>> &shares);
@@ -88,6 +89,8 @@ private slots:
     void slotPrivateLinkEmail();
 
 private:
+    void customizeStyle();
+
     Ui::ShareUserGroupWidget *_ui;
     QScrollArea *_parentScrollArea;
     AccountPtr _account;
@@ -127,6 +130,9 @@ signals:
     void visualDeletionDone();
     void resizeRequested();
 
+public slots:
+    void slotStyleChanged();
+
 private slots:
     void on_deleteShareButton_clicked();
     void slotPermissionsChanged();
@@ -141,6 +147,7 @@ private slots:
 private:
     void displayPermissions();
     void loadAvatar();
+    void customizeStyle();
 
     Ui::ShareUserLine *_ui;
     QSharedPointer<Share> _share;

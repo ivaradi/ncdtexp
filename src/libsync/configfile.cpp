@@ -63,7 +63,9 @@ static const char crashReporterC[] = "crashReporter";
 static const char optionalServerNotificationsC[] = "optionalServerNotifications";
 static const char showInExplorerNavigationPaneC[] = "showInExplorerNavigationPane";
 static const char skipUpdateCheckC[] = "skipUpdateCheck";
+static const char autoUpdateCheckC[] = "autoUpdateCheck";
 static const char updateCheckIntervalC[] = "updateCheckInterval";
+static const char updateSegmentC[] = "updateSegment";
 static const char geometryC[] = "geometry";
 static const char timeoutC[] = "timeout";
 static const char chunkSizeC[] = "chunkSize";
@@ -574,6 +576,47 @@ void ConfigFile::setSkipUpdateCheck(bool skip, const QString &connection)
 
     settings.setValue(QLatin1String(skipUpdateCheckC), QVariant(skip));
     settings.sync();
+}
+
+bool ConfigFile::autoUpdateCheck(const QString &connection) const
+{
+    QString con(connection);
+    if (connection.isEmpty())
+        con = defaultConnection();
+
+    QVariant fallback = getValue(QLatin1String(autoUpdateCheckC), con, true);
+    fallback = getValue(QLatin1String(autoUpdateCheckC), QString(), fallback);
+
+    QVariant value = getPolicySetting(QLatin1String(autoUpdateCheckC), fallback);
+    return value.toBool();
+}
+
+void ConfigFile::setAutoUpdateCheck(bool autoCheck, const QString &connection)
+{
+    QString con(connection);
+    if (connection.isEmpty())
+        con = defaultConnection();
+
+    QSettings settings(configFile(), QSettings::IniFormat);
+    settings.beginGroup(con);
+
+    settings.setValue(QLatin1String(autoUpdateCheckC), QVariant(autoCheck));
+    settings.sync();
+}
+
+int ConfigFile::updateSegment() const
+{
+    QSettings settings(configFile(), QSettings::IniFormat);
+    int segment = settings.value(QLatin1String(updateSegmentC), -1).toInt();
+
+    // Invalid? (Unset at the very first launch)
+    if(segment < 0 || segment > 99) {
+        // Save valid segment value, normally has to be done only once.
+        segment = qrand() % 99;
+        settings.setValue(QLatin1String(updateSegmentC), segment);
+    }
+
+    return segment;
 }
 
 int ConfigFile::maxLogLines() const

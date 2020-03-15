@@ -58,7 +58,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage()
     setupCustomization();
 
     connect(_ui.pbSelectLocalFolder, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectFolder);
-    setButtonText(QWizard::NextButton, tr("Connect..."));
+    setButtonText(QWizard::NextButton, tr("Connect …"));
 
     connect(_ui.rSyncEverything, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSyncEverythingClicked);
     connect(_ui.rSelectiveSync, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectiveSyncClicked);
@@ -68,7 +68,9 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage()
     _ui.lServerIcon->setText(QString());
     _ui.lServerIcon->setPixmap(appIcon.pixmap(48));
     _ui.lLocalIcon->setText(QString());
-    _ui.lLocalIcon->setPixmap(QPixmap(Theme::hidpiFileName(":/client/resources/folder-sync.png")));
+    
+    // TO DO: File doesn't exist anymore - unneccessary or replacement needed?
+    _ui.lLocalIcon->setPixmap(QPixmap(Theme::hidpiFileName(":/client/theme/folder-sync.png")));
 
     if (theme->wizardHideExternalStorageConfirmationCheckbox()) {
         _ui.confCheckBoxExternal->hide();
@@ -387,6 +389,17 @@ qint64 OwncloudAdvancedSetupPage::availableLocalSpace() const
 QString OwncloudAdvancedSetupPage::checkLocalSpace(qint64 remoteSize) const
 {
     return (availableLocalSpace()>remoteSize) ? QString() : tr("There isn't enough free space in the local folder!");
+}
+
+void OwncloudAdvancedSetupPage::slotStyleChanged()
+{
+    customizeStyle();
+}
+
+void OwncloudAdvancedSetupPage::customizeStyle()
+{
+    if(_progressIndi)
+        _progressIndi->setColor(QGuiApplication::palette().color(QPalette::Text));
 }
 
 } // namespace OCC

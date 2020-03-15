@@ -37,6 +37,7 @@ namespace OCC {
 class SyncFileStatus;
 class Folder;
 class SocketListener;
+class DirectEditor;
 
 /**
  * @brief The SocketApi class
@@ -105,6 +106,13 @@ private:
     Q_INVOKABLE void command_EMAIL_PRIVATE_LINK(const QString &localFile, SocketListener *listener);
     Q_INVOKABLE void command_OPEN_PRIVATE_LINK(const QString &localFile, SocketListener *listener);
 
+    // Windows Shell / Explorer pinning fallbacks, see issue: https://github.com/nextcloud/desktop/issues/1599
+#ifdef Q_OS_WIN
+    Q_INVOKABLE void command_COPYASPATH(const QString &localFile, SocketListener *listener);
+    Q_INVOKABLE void command_OPENNEWWINDOW(const QString &localFile, SocketListener *listener);
+    Q_INVOKABLE void command_OPEN(const QString &localFile, SocketListener *listener);
+#endif
+
     // Fetch the private link and call targetFun
     void fetchPrivateLinkUrlHelper(const QString &localFile, const std::function<void(const QString &url)> &targetFun);
 
@@ -122,6 +130,10 @@ private:
      * and ends with GET_MENU_ITEMS:END
      */
     Q_INVOKABLE void command_GET_MENU_ITEMS(const QString &argument, SocketListener *listener);
+
+    /// Direct Editing
+    Q_INVOKABLE void command_EDIT(const QString &localFile, SocketListener *listener);
+    DirectEditor* getDirectEditorForLocalFile(const QString &localFile);
 
     QString buildRegisterPathMessage(const QString &path);
 

@@ -34,7 +34,11 @@
 #include "sharedialog.h"
 #include "accountmanager.h"
 #include "creds/abstractcredentials.h"
+
+#if defined(BUILD_UPDATER)
 #include "updater/ocupdater.h"
+#endif
+
 #include "owncloudsetupwizard.h"
 #include "version.h"
 
@@ -52,6 +56,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QDesktopServices>
+#include <QGuiApplication>
 
 class QSocket;
 
@@ -64,6 +69,7 @@ namespace {
     static const char optionsC[] =
         "Options:\n"
         "  -h --help            : show this help screen.\n"
+        "  --version            : show version information.\n"
         "  --logwindow          : open a window to show log output.\n"
         "  --logfile <filename> : write log output to file <filename>.\n"
         "  --logdir <name>      : write each sync log output in a new file\n"
@@ -122,6 +128,15 @@ Application::Application(int &argc, char **argv)
     // TODO: Can't set this without breaking current config paths
     //    setOrganizationName(QLatin1String(APPLICATION_VENDOR));
     setOrganizationDomain(QLatin1String(APPLICATION_REV_DOMAIN));
+
+    // setDesktopFilename to provide wayland compatibility (in general: conformance with naming standards)
+    // but only on Qt >= 5.7, where setDesktopFilename was introduced
+#if (QT_VERSION >= 0x050700)
+    QString desktopFileName = QString(QLatin1String(LINUX_APPLICATION_ID)
+                                        + QLatin1String(".desktop"));
+    setDesktopFileName(desktopFileName);
+#endif
+
     setApplicationName(_theme->appName());
     setWindowIcon(_theme->applicationIcon());
     setAttribute(Qt::AA_UseHighDpiPixmaps, true);
@@ -244,15 +259,22 @@ Application::Application(int &argc, char **argv)
     connect(&_networkConfigurationManager, &QNetworkConfigurationManager::configurationChanged,
         this, &Application::slotSystemOnlineConfigurationChanged);
 
+#if defined(BUILD_UPDATER)
     // Update checks
     UpdaterScheduler *updaterScheduler = new UpdaterScheduler(this);
     connect(updaterScheduler, &UpdaterScheduler::updaterAnnouncement,
         _gui.data(), &ownCloudGui::slotShowTrayMessage);
     connect(updaterScheduler, &UpdaterScheduler::requestRestart,
         _folderManager.data(), &FolderMan::slotScheduleAppRestart);
+#endif
 
     // Cleanup at Quit.
     connect(this, &QCoreApplication::aboutToQuit, this, &Application::slotCleanup);
+
+    // Allow other classes to hook into isShowingSettingsDialog() signals (re-auth widgets, for example)
+    connect(_gui.data(), &ownCloudGui::isShowingSettingsDialog, this, &Application::slotGuiIsShowingSettings);
+
+    _gui->createTray();
 }
 
 Application::~Application()
@@ -377,7 +399,7 @@ void Application::slotownCloudWizardDone(int res)
             Utility::setLaunchOnStartup(_theme->appName(), _theme->appNameGUI(), true);
         }
 
-        _gui->slotShowSettings();
+        Systray::instance()->showWindow();
     }
 }
 
@@ -645,5 +667,9 @@ void Application::showSettingsDialog()
     _gui->slotShowSettings();
 }
 
+void Application::slotGuiIsShowingSettings()
+{
+    emit isShowingSettingsDialog();
+}
 
 } // namespace OCC

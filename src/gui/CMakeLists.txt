@@ -1,12 +1,14 @@
 project(gui)
-find_package(Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt5 REQUIRED COMPONENTS Widgets Svg Qml Quick)
 set(CMAKE_AUTOMOC TRUE)
 set(CMAKE_AUTOUIC TRUE)
 set(CMAKE_AUTORCC TRUE)
-add_subdirectory(updater)
 
-#TODO Move resources files
-set(MIRALL_RC_SRC ../../client.qrc)
+IF(BUILD_UPDATER)
+    add_subdirectory(updater)
+endif()
+
+set(MIRALL_RC_SRC ../../resources.qrc)
 if (EXISTS "${OEM_THEME_DIR}/theme.qrc")
     list(APPEND MIRALL_RC_SRC ${OEM_THEME_DIR}/theme.qrc)
     set(theme_dir ${OEM_THEME_DIR}/theme)
@@ -14,6 +16,8 @@ else()
     list(APPEND MIRALL_RC_SRC ../../theme.qrc)
     set(theme_dir ${CMAKE_SOURCE_DIR}/theme)
 endif()
+
+#set (QML_IMPORT_PATH "${CMAKE_SOURCE_DIR}/src/gui/tray" CACHE STRING "Extra qml module import paths" FORCE)
 
 set(client_UI_SRCS
     accountsettings.ui
@@ -24,7 +28,6 @@ set(client_UI_SRCS
     ignorelisteditor.ui
     ignorelisttablewidget.ui
     networksettings.ui
-    activitywidget.ui
     synclogdialog.ui
     settingsdialog.ui
     sharedialog.ui
@@ -35,12 +38,13 @@ set(client_UI_SRCS
     addcertificatedialog.ui
     proxyauthdialog.ui
     mnemonicdialog.ui
+    tray/Window.qml
+    tray/UserLine.qml
+    wizard/flow2authwidget.ui
     wizard/owncloudadvancedsetuppage.ui
     wizard/owncloudconnectionmethoddialog.ui
     wizard/owncloudhttpcredspage.ui
     wizard/owncloudoauthcredspage.ui
-    wizard/flow2authcredspage.ui
-    wizard/flow2authwidget.ui
     wizard/owncloudsetupnocredspage.ui
     wizard/owncloudwizardresultpage.ui
     wizard/webview.ui
@@ -74,10 +78,6 @@ set(client_SRCS
     openfilemanager.cpp
     owncloudgui.cpp
     owncloudsetupwizard.cpp
-    activitydata.cpp
-    activitylistmodel.cpp
-    activitywidget.cpp
-    activityitemdelegate.cpp
     selectivesyncdialog.cpp
     settingsdialog.cpp
     sharedialog.cpp
@@ -91,7 +91,7 @@ set(client_SRCS
     syncrunfilelog.cpp
     systray.cpp
     thumbnailjob.cpp
-    quotainfo.cpp
+    userinfo.cpp
     accountstate.cpp
     addcertificatedialog.cpp
     authenticationdialog.cpp
@@ -100,15 +100,20 @@ set(client_SRCS
     synclogdialog.cpp
     tooltipupdater.cpp
     notificationconfirmjob.cpp
-    servernotificationhandler.cpp
     guiutility.cpp
     elidedlabel.cpp
+    headerbanner.cpp
     iconjob.cpp
     remotewipe.cpp
+    tray/ActivityData.cpp
+    tray/ActivityListModel.cpp
+    tray/UserModel.cpp
+    tray/NotificationHandler.cpp
     creds/credentialsfactory.cpp
     creds/httpcredentialsgui.cpp
     creds/oauth.cpp
     creds/flow2auth.cpp
+    creds/keychainchunk.cpp
     creds/webflowcredentials.cpp
     creds/webflowcredentialsdialog.cpp
     wizard/postfixlineedit.cpp
@@ -137,20 +142,20 @@ IF(NOT NO_SHIBBOLETH)
     )
 endif()
 
-set(updater_SRCS
-    updater/ocupdater.cpp
-    updater/updateinfo.cpp
-    updater/updater.cpp
-)
+IF(BUILD_UPDATER)
+    set(updater_SRCS
+        updater/ocupdater.cpp
+        updater/updateinfo.cpp
+        updater/updater.cpp
+    )
+endif()
 
 IF( APPLE )
     list(APPEND client_SRCS cocoainitializer_mac.mm)
-    list(APPEND client_SRCS settingsdialogmac.cpp)
-    list(REMOVE_ITEM client_SRCS settingsdialog.cpp)
     list(APPEND client_SRCS socketapisocket_mac.mm)
     list(APPEND client_SRCS systray.mm)
 
-    if(SPARKLE_FOUND)
+    if(SPARKLE_FOUND AND BUILD_UPDATER)
        # Define this, we need to check in updater.cpp
        add_definitions( -DHAVE_SPARKLE )
        list(APPEND updater_SRCS updater/sparkleupdater_mac.mm)
@@ -175,17 +180,6 @@ set(3rdparty_SRC
     ../3rdparty/qtsingleapplication/qtsinglecoreapplication.cpp
     ../3rdparty/kmessagewidget/kmessagewidget.cpp
    )
-
-if (APPLE)
-    list(APPEND 3rdparty_SRC
-        ../3rdparty/qtmacgoodies/src/macpreferenceswindow.mm
-        ../3rdparty/qtmacgoodies/src/macstandardicon.mm
-        ../3rdparty/qtmacgoodies/src/macwindow.mm
-        )
-    # We want to access Cocoa specific structures in the code above
-    # and need the platform plugin interface for that - which is private.
-    include_directories(${Qt5Gui_PRIVATE_INCLUDE_DIRS})
-endif()
 
 if(NOT WIN32)
    list(APPEND 3rdparty_SRC ../3rdparty/qtlockedfile/qtlockedfile_unix.cpp)
@@ -309,9 +303,11 @@ else()
     install(FILES ${qtkeychain_I18N} DESTINATION ${QM_DIR})
 endif()
 
-add_library(updater STATIC ${updater_SRCS})
-target_link_libraries(updater ${synclib_NAME} Qt5::Widgets Qt5::Network Qt5::Xml Qt5::WebEngineWidgets)
-target_include_directories(updater PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+IF(BUILD_UPDATER)
+    add_library(updater STATIC ${updater_SRCS})
+    target_link_libraries(updater ${synclib_NAME} Qt5::Widgets Qt5::Svg Qt5::Network Qt5::Xml)
+    target_include_directories(updater PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+endif()
 
 set_target_properties( ${APPLICATION_EXECUTABLE} PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY  ${BIN_OUTPUT_DIRECTORY}
@@ -320,9 +316,11 @@ set_target_properties( ${APPLICATION_EXECUTABLE} PROPERTIES
 set_target_properties( ${APPLICATION_EXECUTABLE} PROPERTIES
         INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE};${CMAKE_INSTALL_RPATH}" )
 
-target_link_libraries( ${APPLICATION_EXECUTABLE} Qt5::Widgets Qt5::Network Qt5::Xml)
+target_link_libraries( ${APPLICATION_EXECUTABLE} Qt5::Widgets Qt5::Svg Qt5::Network Qt5::Xml Qt5::Qml Qt5::Quick Qt5::WebEngineWidgets)
 target_link_libraries( ${APPLICATION_EXECUTABLE} ${synclib_NAME} )
-target_link_libraries( ${APPLICATION_EXECUTABLE} updater )
+IF(BUILD_UPDATER)
+    target_link_libraries( ${APPLICATION_EXECUTABLE} updater )
+endif()
 target_link_libraries( ${APPLICATION_EXECUTABLE} ${OS_SPECIFIC_LINK_LIBRARIES} )
 IF( LIBCLOUDPROVIDERS_FOUND )
     string(TOLOWER "${APPLICATION_VENDOR}" DBUS_VENDOR)
@@ -342,10 +340,10 @@ ENDIF()
 target_include_directories(${APPLICATION_EXECUTABLE} PRIVATE
     ${CMAKE_SOURCE_DIR}/src/3rdparty/QProgressIndicator
     ${CMAKE_SOURCE_DIR}/src/3rdparty/qtlockedfile
-    ${CMAKE_SOURCE_DIR}/src/3rdparty/qtmacgoodies/src
     ${CMAKE_SOURCE_DIR}/src/3rdparty/qtsingleapplication
     ${CMAKE_SOURCE_DIR}/src/3rdparty/kmessagewidget
     ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 ## handle DBUS for Fdo notifications
@@ -401,7 +399,7 @@ endif()
 
 if(NOT BUILD_OWNCLOUD_OSX_BUNDLE AND NOT WIN32)
     configure_file(${CMAKE_SOURCE_DIR}/mirall.desktop.in
-                   ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_EXECUTABLE}.desktop)
-    install(FILES  ${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_EXECUTABLE}.desktop DESTINATION ${DATADIR}/applications )
+                   ${CMAKE_CURRENT_BINARY_DIR}/${LINUX_APPLICATION_ID}.desktop)
+    install(FILES  ${CMAKE_CURRENT_BINARY_DIR}/${LINUX_APPLICATION_ID}.desktop DESTINATION ${DATADIR}/applications )
 endif()
 

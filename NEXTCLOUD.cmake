@@ -7,11 +7,12 @@ set( APPLICATION_UPDATE_URL "https://updates.nextcloud.org/client/" CACHE STRING
 set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" )
 set( APPLICATION_ICON_NAME  "Nextcloud" )
 set( APPLICATION_SERVER_URL "" CACHE STRING "URL for the server to use. If entered the server can only connect to this instance" )
+set( APPLICATION_REV_DOMAIN "com.nextcloud.desktopclient" )
 
 set( LINUX_PACKAGE_SHORTNAME "nextcloud" )
+set( LINUX_APPLICATION_ID "${APPLICATION_REV_DOMAIN}.${LINUX_PACKAGE_SHORTNAME}")
 
 set( THEME_CLASS            "NextcloudTheme" )
-set( APPLICATION_REV_DOMAIN "com.nextcloud.desktopclient" )
 set( WIN_SETUP_BITMAP_PATH  "${CMAKE_SOURCE_DIR}/admin/win/nsi" )
 
 set( MAC_INSTALLER_BACKGROUND_FILE "${CMAKE_SOURCE_DIR}/admin/osx/installer-background.png" CACHE STRING "The MacOSX installer background image")
@@ -22,6 +23,9 @@ set( MAC_INSTALLER_BACKGROUND_FILE "${CMAKE_SOURCE_DIR}/admin/osx/installer-back
 option( WITH_CRASHREPORTER "Build crashreporter" OFF )
 #set( CRASHREPORTER_SUBMIT_URL "https://crash-reports.owncloud.com/submit" CACHE STRING "URL for crash reporter" )
 #set( CRASHREPORTER_ICON ":/owncloud-icon.png" )
+
+## Updater options
+option( BUILD_UPDATER "Build updater" OFF )
 
 option( WITH_PROVIDERS "Build with providers list" ON )
 

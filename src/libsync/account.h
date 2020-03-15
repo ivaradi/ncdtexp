@@ -52,7 +52,6 @@ namespace OCC {
 class AbstractCredentials;
 class Account;
 typedef QSharedPointer<Account> AccountPtr;
-class QuotaInfo;
 class AccessManager;
 class SimpleNetworkJob;
 
@@ -243,8 +242,12 @@ public:
 
     /// Used in RemoteWipe
     void retrieveAppPassword();
-    void setAppPassword(QString appPassword);
+    void writeAppPasswordOnce(QString appPassword);
     void deleteAppPassword();
+
+    /// Direct Editing
+    // Check for the directEditing capability
+    void fetchDirectEditors(const QUrl &directEditingURL, const QString &directEditingETag);
 
 public slots:
     /// Used when forgetting credentials
@@ -278,6 +281,7 @@ signals:
 protected Q_SLOTS:
     void slotCredentialsFetched();
     void slotCredentialsAsked();
+    void slotDirectEditingRecieved(const QJsonDocument &json);
 
 private:
     Account(QObject *parent = nullptr);
@@ -306,7 +310,6 @@ private:
     Capabilities _capabilities;
     QString _serverVersion;
     QScopedPointer<AbstractSslErrorHandler> _sslErrorHandler;
-    QuotaInfo *_quotaInfo;
     QSharedPointer<QNetworkAccessManager> _am;
     QScopedPointer<AbstractCredentials> _credentials;
     bool _http2Supported = false;
@@ -319,7 +322,29 @@ private:
     QString _davPath; // defaults to value from theme, might be overwritten in brandings
     ClientSideEncryption _e2e;
 
+    /// Used in RemoteWipe
+    bool _wroteAppPassword = false;
+
     friend class AccountManager;
+
+    // Direct Editing
+    QString _lastDirectEditingETag;
+
+    /* IMPORTANT - remove later - FIXME MS@2019-12-07 -->
+     * TODO: For "Log out" & "Remove account": Remove client CA certs and KEY!
+     *
+     *       Disabled as long as selecting another cert is not supported by the UI.
+     *
+     *       Being able to specify a new certificate is important anyway: expiry etc.
+     *
+     *       We introduce this dirty hack here, to allow deleting them upon Remote Wipe.
+    */
+    public:
+        void setRemoteWipeRequested_HACK() { _isRemoteWipeRequested_HACK = true; }
+        bool isRemoteWipeRequested_HACK() { return _isRemoteWipeRequested_HACK; }
+    private:
+        bool _isRemoteWipeRequested_HACK = false;
+    // <-- FIXME MS@2019-12-07
 };
 }
 

@@ -27,7 +27,7 @@ download page.
 System Requirements
 ----------------------------------
 
-- Windows 7+
+- Windows 8.1+
 - macOS 10.7+ (**64-bit only**)
 - CentOS 6 & 7 (64-bit only)
 - Debian 8.0 & 9.0
@@ -36,8 +36,7 @@ System Requirements
 - openSUSE Leap 42.2 & 42.3
 
 .. note::
-   For Linux distributions, we support, if technically feasible, the latest 2 versions per platform and the previous `LTS`_.
->>>>>>> b2da03441... update supported linux platforms
+   For Linux distributions, we support, if technically feasible, the latest 2 versions per platform and the previous LTS.
 
 Installation Wizard
 -------------------

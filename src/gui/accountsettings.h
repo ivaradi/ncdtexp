@@ -22,7 +22,7 @@
 #include <QTimer>
 
 #include "folder.h"
-#include "quotainfo.h"
+#include "userinfo.h"
 #include "progressdispatcher.h"
 #include "owncloudgui.h"
 #include "folderstatusmodel.h"
@@ -64,11 +64,13 @@ signals:
     void showIssuesList(AccountState *account);
     void requesetMnemonic();
     void removeAccountFolders(AccountState *account);
+    void styleChanged();
 
 public slots:
     void slotOpenOC();
     void slotUpdateQuota(qint64, qint64);
     void slotAccountStateChanged();
+    void slotStyleChanged();
 
     AccountState *accountsState() { return _accountState; }
 
@@ -88,7 +90,6 @@ protected slots:
     void slotDeleteAccount();
     void slotToggleSignInState();
     void slotOpenAccountWizard();
-    void slotAccountAdded(AccountState *);
     void refreshSelectiveSyncStatus();
     void slotMarkSubfolderEncrypted(const FolderStatusModel::SubFolderInfo* folderInfo);
     void slotMarkSubfolderDecrypted(const FolderStatusModel::SubFolderInfo* folderInfo);
@@ -97,8 +98,6 @@ protected slots:
     void slotFolderListClicked(const QModelIndex &indx);
     void doExpand();
     void slotLinkActivated(const QString &link);
-
-    void slotMenuBeforeShow();
 
     // Encryption Related Stuff.
     void slotShowMnemonic(const QString &mnemonic);
@@ -129,17 +128,18 @@ private:
     bool event(QEvent *) override;
     void createAccountToolbox();
     void openIgnoredFilesDialog(const QString & absFolderPath);
+    void customizeStyle();
 
     /// Returns the alias of the selected folder, empty string if none
     QString selectedFolderAlias() const;
 
-    Ui::AccountSettings *ui;
+    Ui::AccountSettings *_ui;
 
     FolderStatusModel *_model;
     QUrl _OCUrl;
     bool _wasDisabledBefore;
     AccountState *_accountState;
-    QuotaInfo _quotaInfo;
+    UserInfo _userInfo;
     QAction *_toggleSignInOutAction;
     QAction *_addAccountAction;
 

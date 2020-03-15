@@ -26,6 +26,7 @@
 #include "thumbnailjob.h"
 #include "sharee.h"
 #include "sharemanager.h"
+#include "theme.h"
 
 #include "QProgressIndicator.h"
 #include <QBuffer>
@@ -44,6 +45,8 @@
 #include <QColor>
 #include <QPainter>
 #include <QListWidget>
+
+#include <string.h>
 
 namespace OCC {
 
@@ -112,6 +115,8 @@ ShareUserGroupWidget::ShareUserGroupWidget(AccountPtr account,
     //_ui->shareeHorizontalLayout->addWidget(&_pi_sharee);
 
     _parentScrollArea = parentWidget()->findChild<QScrollArea*>("scrollArea");
+
+    customizeStyle();
 }
 
 ShareUserGroupWidget::~ShareUserGroupWidget()
@@ -203,7 +208,8 @@ void ShareUserGroupWidget::slotSharesFetched(const QList<QSharedPointer<Share>> 
         }
 
         // the owner of the file that shared it first
-        if(x == 0 && !share->getUidOwner().isEmpty()){
+		// leave out if it's the current user
+        if(x == 0 && !share->getUidOwner().isEmpty() && !(share->getUidOwner() == _account->credentials()->user())) {
             _ui->mainOwnerLabel->setText(QString("Shared with you by ").append(share->getOwnerDisplayName()));
         }
 
@@ -211,6 +217,10 @@ void ShareUserGroupWidget::slotSharesFetched(const QList<QSharedPointer<Share>> 
         connect(s, &ShareUserLine::resizeRequested, this, &ShareUserGroupWidget::slotAdjustScrollWidgetSize);
         connect(s, &ShareUserLine::visualDeletionDone, this, &ShareUserGroupWidget::getShares);
         s->setBackgroundRole(layout->count() % 2 == 0 ? QPalette::Base : QPalette::AlternateBase);
+
+        // Connect styleChanged events to our widget, so it can adapt (Dark-/Light-Mode switching)
+        connect(this, &ShareUserGroupWidget::styleChanged, s, &ShareUserLine::slotStyleChanged);
+
         layout->addWidget(s);
 
         x++;
@@ -255,7 +265,8 @@ void ShareUserGroupWidget::slotPrivateLinkShare()
     auto menu = new QMenu(this);
     menu->setAttribute(Qt::WA_DeleteOnClose);
 
-    menu->addAction(QIcon(":/client/resources/copy.svg"),
+    // this icon is not handled by slotStyleChanged() -> customizeStyle but we can live with that
+    menu->addAction(Theme::createColorAwareIcon(":/client/theme/copy.svg"),
                     tr("Copy link"),
         this, SLOT(slotPrivateLinkCopy()));
 
@@ -358,6 +369,25 @@ void ShareUserGroupWidget::slotPrivateLinkEmail()
         this);
 }
 
+void ShareUserGroupWidget::slotStyleChanged()
+{
+    customizeStyle();
+
+    // Notify the other widgets (ShareUserLine in this case, Dark-/Light-Mode switching)
+    emit styleChanged();
+}
+
+void ShareUserGroupWidget::customizeStyle()
+{
+    _ui->confirmShare->setIcon(Theme::createColorAwareIcon(":/client/theme/confirm.svg"));
+
+    _pi_sharee.setColor(QGuiApplication::palette().color(QPalette::Text));
+
+    foreach (auto pi, _parentScrollArea->findChildren<QProgressIndicator *>()) {
+        pi->setColor(QGuiApplication::palette().color(QPalette::Text));;
+    }
+}
+
 ShareUserLine::ShareUserLine(QSharedPointer<Share> share,
     SharePermissions maxSharingPermissions,
     bool isFile,
@@ -391,7 +421,7 @@ ShareUserLine::ShareUserLine(QSharedPointer<Share> share,
     menu->addSeparator();
 
       // Adds action to delete share widget
-      QIcon deleteicon = QIcon::fromTheme(QLatin1String("user-trash"),QIcon(QLatin1String(":/client/resources/delete.png")));
+      QIcon deleteicon = QIcon::fromTheme(QLatin1String("user-trash"),QIcon(QLatin1String(":/client/theme/delete.svg")));
       _deleteShareButton= new QAction(deleteicon,tr("Unshare"), this);
 
     menu->addAction(_deleteShareButton);
@@ -423,9 +453,6 @@ ShareUserLine::ShareUserLine(QSharedPointer<Share> share,
     _ui->permissionToolButton->setMenu(menu);
     _ui->permissionToolButton->setPopupMode(QToolButton::InstantPopup);
 
-    QIcon icon(QLatin1String(":/client/resources/more.svg"));
-    _ui->permissionToolButton->setIcon(icon);
-
     // Set the permissions checkboxes
     displayPermissions();
 
@@ -443,14 +470,13 @@ ShareUserLine::ShareUserLine(QSharedPointer<Share> share,
     connect(share.data(), &Share::permissionsSet, this, &ShareUserLine::slotPermissionsSet);
     connect(share.data(), &Share::shareDeleted, this, &ShareUserLine::slotShareDeleted);
 
-    // _ui->deleteShareButton->setIcon(QIcon::fromTheme(QLatin1String("user-trash"),
-    //                                                  QIcon(QLatin1String(":/client/resources/delete.png"))));
-
     if (!share->account()->capabilities().shareResharing()) {
         _permissionReshare->setVisible(false);
     }
 
     loadAvatar();
+
+    customizeStyle();
 }
 
 void ShareUserLine::loadAvatar()
@@ -645,4 +671,18 @@ void ShareUserLine::displayPermissions()
         _permissionDelete->setChecked(perm & SharePermissionDelete);
     }
 }
+
+void ShareUserLine::slotStyleChanged()
+{
+    customizeStyle();
+}
+
+void ShareUserLine::customizeStyle()
+{
+    _ui->permissionToolButton->setIcon(Theme::createColorAwareIcon(":/client/theme/more.svg"));
+
+    QIcon deleteicon = QIcon::fromTheme(QLatin1String("user-trash"),Theme::createColorAwareIcon(QLatin1String(":/client/theme/delete.svg")));
+    _deleteShareButton->setIcon(deleteicon);
+}
+
 }

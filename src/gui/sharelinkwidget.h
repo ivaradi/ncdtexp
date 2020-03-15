@@ -33,7 +33,6 @@ namespace Ui {
 }
 
 class AbstractCredentials;
-class QuotaInfo;
 class SyncResult;
 class LinkShare;
 class Share;
@@ -65,6 +64,7 @@ public slots:
     void slotToggleAnimation(bool start);
     void slotServerError(int code, const QString &message);
     void slotCreateShareRequiresPassword(const QString &message);
+    void slotStyleChanged();
 
 private slots:
     void slotCreateShareLink(bool clicked);
@@ -72,6 +72,9 @@ private slots:
     void slotCreatePassword();
     void slotPasswordSet();
     void slotPasswordSetError(int code, const QString &message);
+
+	void slotCreateNote();
+    void slotNoteSet();
 
     void slotSetExpireDate();
     void slotExpireDateSet();
@@ -94,6 +97,10 @@ private:
     void showPasswordOptions(bool show);
     void togglePasswordOptions(bool enable);
 
+	void showNoteOptions(bool show);
+    void toggleNoteOptions(bool enable);
+    void setNote(const QString &note);
+
     void showExpireDateOptions(bool show);
     void toggleExpireDateOptions(bool enable);
 
@@ -107,6 +114,8 @@ private:
 
     void startAnimation(const int start, const int end);
 
+    void customizeStyle();
+
     Ui::ShareLinkWidget *_ui;
     AccountPtr _account;
     QString _sharePath;
@@ -119,6 +128,7 @@ private:
     bool _passwordRequired;
     bool _expiryRequired;
     bool _namesSupported;
+    bool _noteRequired;
 
     QMenu *_linkContextMenu;
     QAction *_readOnlyLinkAction;
@@ -129,6 +139,7 @@ private:
     QAction *_expirationDateLinkAction;
     QAction *_unshareLinkAction;
     QAction *_addAnotherLinkAction;
+    QAction *_noteLinkAction;
 };
 }
 

@@ -39,17 +39,26 @@ public:
     ~GeneralSettings();
     QSize sizeHint() const override;
 
+public slots:
+    void slotStyleChanged();
+
 private slots:
     void saveMiscSettings();
     void slotToggleLaunchOnStartup(bool);
     void slotToggleOptionalServerNotifications(bool);
     void slotShowInExplorerNavigationPane(bool);
-    void slotUpdateInfo();
     void slotIgnoreFilesEditor();
     void loadMiscSettings();
     void slotShowLegalNotice();
+#if defined(BUILD_UPDATER)
+    void slotUpdateInfo();
+    void slotUpdateCheckNow();
+    void slotToggleAutoUpdateCheck();
+#endif
 
 private:
+    void customizeStyle();
+
     Ui::GeneralSettings *_ui;
     QPointer<IgnoreListEditor> _ignoreEditor;
     QPointer<SyncLogDialog> _syncLogDialog;

@@ -23,8 +23,11 @@
 #include "accountmanager.h"
 #include "synclogdialog.h"
 
+#if defined(BUILD_UPDATER)
 #include "updater/updater.h"
 #include "updater/ocupdater.h"
+#endif
+
 #include "ignorelisteditor.h"
 #include "common/utility.h"
 
@@ -57,6 +60,13 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     connect(_ui->showInExplorerNavigationPaneCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::slotShowInExplorerNavigationPane);
 
+    // Rename 'Explorer' appropriately on non-Windows
+#ifdef Q_OS_MAC
+    QString txt = _ui->showInExplorerNavigationPaneCheckBox->text();
+    txt.replace(QString::fromLatin1("Explorer"), QString::fromLatin1("Finder"));
+    _ui->showInExplorerNavigationPaneCheckBox->setText(txt);
+#endif
+
     _ui->autostartCheckBox->setChecked(Utility::hasLaunchOnStartup(Theme::instance()->appName()));
     connect(_ui->autostartCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleLaunchOnStartup);
 
@@ -70,7 +80,8 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->legalNoticeButton, &QPushButton::clicked, this, &GeneralSettings::slotShowLegalNotice);
 
     loadMiscSettings();
-    slotUpdateInfo();
+    // updater info now set in: customizeStyle
+    //slotUpdateInfo();
 
     // misc
     connect(_ui->monoIconsCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
@@ -92,6 +103,9 @@ GeneralSettings::GeneralSettings(QWidget *parent)
         if (QOperatingSystemVersion::current() < QOperatingSystemVersion::Windows10)
     #endif
             _ui->showInExplorerNavigationPaneCheckBox->setVisible(false);
+#else
+    // Hide on non-Windows
+    _ui->showInExplorerNavigationPaneCheckBox->setVisible(false);
 #endif
 
     /* Set the left contents margin of the layout to zero to make the checkboxes
@@ -109,6 +123,8 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
+
+    customizeStyle();
 }
 
 GeneralSettings::~GeneralSettings()
@@ -137,6 +153,7 @@ void GeneralSettings::loadMiscSettings()
     _ui->monoIconsCheckBox->setChecked(cfgFile.monoIcons());
 }
 
+#if defined(BUILD_UPDATER)
 void GeneralSettings::slotUpdateInfo()
 {
     // Note: the sparkle-updater is not an OCUpdater
@@ -149,13 +166,47 @@ void GeneralSettings::slotUpdateInfo()
         connect(updater, &OCUpdater::downloadStateChanged, this, &GeneralSettings::slotUpdateInfo, Qt::UniqueConnection);
         connect(_ui->restartButton, &QAbstractButton::clicked, updater, &OCUpdater::slotStartInstaller, Qt::UniqueConnection);
         connect(_ui->restartButton, &QAbstractButton::clicked, qApp, &QApplication::quit, Qt::UniqueConnection);
-        _ui->updateStateLabel->setText(updater->statusString());
+        connect(_ui->updateButton, &QAbstractButton::clicked, this, &GeneralSettings::slotUpdateCheckNow, Qt::UniqueConnection);
+        connect(_ui->autoCheckForUpdatesCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleAutoUpdateCheck);
+
+        QString status = updater->statusString();
+        Theme::replaceLinkColorStringBackgroundAware(status);
+        _ui->updateStateLabel->setText(status);
+
         _ui->restartButton->setVisible(updater->downloadState() == OCUpdater::DownloadComplete);
+
+        _ui->updateButton->setEnabled(updater->downloadState() != OCUpdater::CheckingServer &&
+                                      updater->downloadState() != OCUpdater::Downloading &&
+                                      updater->downloadState() != OCUpdater::DownloadComplete);
+
+        _ui->autoCheckForUpdatesCheckBox->setChecked(ConfigFile().autoUpdateCheck());
     } else {
         // can't have those infos from sparkle currently
         _ui->updatesGroupBox->setVisible(false);
     }
 }
+
+void GeneralSettings::slotUpdateCheckNow()
+{
+    OCUpdater *updater = qobject_cast<OCUpdater *>(Updater::instance());
+    if (ConfigFile().skipUpdateCheck()) {
+        updater = nullptr; // don't show update info if updates are disabled
+    }
+
+    if (updater) {
+        _ui->updateButton->setEnabled(false);
+
+        updater->checkForUpdate();
+    }
+}
+
+void GeneralSettings::slotToggleAutoUpdateCheck()
+{
+    ConfigFile cfgFile;
+    bool isChecked = _ui->autoCheckForUpdatesCheckBox->isChecked();
+    cfgFile.setAutoUpdateCheck(isChecked, QString());
+}
+#endif // defined(BUILD_UPDATER)
 
 void GeneralSettings::saveMiscSettings()
 {
@@ -209,6 +260,26 @@ void GeneralSettings::slotShowLegalNotice()
     auto notice = new LegalNotice();
     notice->exec();
     delete notice;
+}
+
+void GeneralSettings::slotStyleChanged()
+{
+    customizeStyle();
+}
+
+void GeneralSettings::customizeStyle()
+{
+    // setup about section
+    QString about = Theme::instance()->about();
+    Theme::replaceLinkColorStringBackgroundAware(about);
+    _ui->aboutLabel->setText(about);
+
+#if defined(BUILD_UPDATER)
+    // updater info
+    slotUpdateInfo();
+#else
+    _ui->updatesGroupBox->setVisible(false);
+#endif
 }
 
 } // namespace OCC

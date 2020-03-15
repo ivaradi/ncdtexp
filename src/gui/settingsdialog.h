@@ -37,7 +37,6 @@ class AccountSettings;
 class Application;
 class FolderMan;
 class ownCloudGui;
-class ActivitySettings;
 
 /**
  * @brief The SettingsDialog class
@@ -55,13 +54,14 @@ public:
 
 public slots:
     void showFirstPage();
-    void showActivityPage();
     void showIssuesList(AccountState *account);
     void slotSwitchPage(QAction *action);
-    void slotRefreshActivity(AccountState *accountState);
-    void slotRefreshActivityAccountStateSender();
     void slotAccountAvatarChanged();
     void slotAccountDisplayNameChanged();
+
+signals:
+    void styleChanged();
+    void onActivate();
 
 protected:
     void reject() override;
@@ -74,9 +74,7 @@ private slots:
 
 private:
     void customizeStyle();
-    void activityAdded(AccountState *);
 
-    QIcon createColorAwareIcon(const QString &name);
     QAction *createColorAwareAction(const QString &iconName, const QString &fileName);
     QAction *createActionWithIcon(const QIcon &icon, const QString &text, const QString &iconPath = QString());
 
@@ -92,7 +90,6 @@ private:
     QHash<Account *, QAction *> _actionForAccount;
 
     QToolBar *_toolBar;
-    QMap<AccountState *, ActivitySettings *> _activitySettings;
 
     ownCloudGui *_gui;
 };
