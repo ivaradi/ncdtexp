@@ -3,6 +3,8 @@
 set -xe
 shopt -s extglob
 
+env
+
 PPA=ppa:nextcloud-devs/client
 PPA_BETA=ppa:nextcloud-devs/client-beta
 
@@ -31,7 +33,8 @@ fi
 set -x
 
 cd "${DRONE_WORKSPACE}"
-read basever kind <<<$(admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog stable)
+read basever revdate kind <<<$(admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog stable)
+echo "basever=$basever, revdate=$revdate"
 
 cd "${DRONE_DIR}"
 
@@ -45,51 +48,47 @@ fi
 
 origsourceopt=""
 
-if ! wget http://ppa.launchpad.net/${repo}/ubuntu/pool/main/n/nextcloud-client/nextcloud-client_${basever}.orig.tar.bz2; then
-    cp -a ${DRONE_WORKSPACE} nextcloud-client_${basever}
-    tar cjf nextcloud-client_${basever}.orig.tar.bz2 --exclude .git nextcloud-client_${basever}
-    origsourceopt="-sa"
-fi
+#if ! wget http://ppa.launchpad.net/${repo}/ubuntu/pool/main/n/nextcloud-client/nextcloud-client_${basever}.orig.tar.bz2; then
+cp -a ${DRONE_WORKSPACE} nextcloud-desktop_${basever}-${revdate}
+tar cjf nextcloud-desktop_${basever}-${revdate}.orig.tar.bz2 --exclude .git nextcloud-desktop_${basever}-${revdate}
 
-for distribution in xenial bionic disco eoan focal stable oldstable; do
-    rm -rf nextcloud-client_${basever}
-    cp -a ${DRONE_WORKSPACE} nextcloud-client_${basever}
+cd "${DRONE_WORKSPACE}"
+git config --global user.email "abc@def.com"
+git config --global user.name "Drone User"
 
-    cd nextcloud-client_${basever}
+for distribution in eoan; do
+    git checkout -- .
+    git clean -xdf
 
-    cp -a admin/linux/debian/debian .
-    if test -d admin/linux/debian/debian.${distribution}; then
-        tar cf - -C admin/linux/debian/debian.${distribution} . | tar xf - -C debian
-    fi
+    git fetch origin debian/ubuntu/${distribution}/master
+    git checkout origin/debian/ubuntu/${distribution}/master
 
-    admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog ${distribution}
+    git merge ${DRONE_COMMIT}
+
+    admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog ${distribution} ${revdate}
     cp /tmp/tmpchangelog debian/changelog
-    if test -f admin/linux/debian/debian.${distribution}/changelog; then
-        cat admin/linux/debian/debian.${distribution}/changelog >> debian/changelog
-    else
-        cat admin/linux/debian/debian/changelog >> debian/changelog
-    fi
 
-    for p in debian/post-patches/*.patch; do
-        if test -f "${p}"; then
-            echo "Applying ${p}"
-            patch -p1 < "${p}"
-        fi
-    done
+    fullver=`head -1 debian/changelog | sed "s:nextcloud-package (\([^)]*\)).*:\1:"`
 
-    fullver=`head -1 debian/changelog | sed "s:nextcloud-client (\([^)]*\)).*:\1:"`
+    echo "============================================================================"
+    cat CMakeLists.txt
+    echo "============================================================================"
+    ls -al
+    echo "============================================================================"
 
     EDITOR=true dpkg-source --commit . local-changes
 
     dpkg-source --build .
-    dpkg-genchanges -S ${origsourceopt} > "../nextcloud-client_${fullver}_source.changes"
+    dpkg-genchanges -S -sa > "../nextcloud-package_${fullver}_source.changes"
 
     if test -f ~/.has_ppa_keys; then
         debsign -k7D14AA7B -S
     fi
-
-    cd ..
 done
+cd ..
+ls -al
+
+exit 0
 
 if test "${pull_request}" = "master"; then
     kind=`cat kind`
