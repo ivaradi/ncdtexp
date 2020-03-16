@@ -28,21 +28,24 @@ def getCommitVersion(commit):
     major=None
     minor=None
     patch=None
-    for line in subprocess.check_output(["git", "show",
-                                         commit + ":VERSION.cmake"]).splitlines():
-        m = re.match("set\( MIRALL_VERSION_([A-Z]+) +([0-9])+ *\)", line)
-        if m is not None:
-            kind=m.group(1)
-            version=m.group(2)
-            if kind=="MAJOR":
-                major=version
-            elif kind=="MINOR":
-                minor=version
-            elif kind=="PATCH":
-                patch=version
-    if major and minor and patch:
-        return major + "." + minor + "." + patch
-    else:
+    try:
+        for line in subprocess.check_output(["git", "show",
+                                             commit + ":VERSION.cmake"]).splitlines():
+            m = re.match("set\( MIRALL_VERSION_([A-Z]+) +([0-9])+ *\)", line)
+            if m is not None:
+                kind=m.group(1)
+                version=m.group(2)
+                if kind=="MAJOR":
+                    major=version
+                elif kind=="MINOR":
+                    minor=version
+                elif kind=="PATCH":
+                    patch=version
+        if major and minor and patch:
+            return major + "." + minor + "." + patch
+        else:
+            return None
+    except:
         return None
 
 def collectEntries(baseCommit, baseVersion, kind):
@@ -113,6 +116,13 @@ def collectEntries(baseCommit, baseVersion, kind):
         entries.append((commit, name, email, date, revdate, subject,
                         baseVersion, kind))
 
+        first = False
+
+    if entries:
+        (commit, name, email, date, revdate, subject, baseVersion, kind) = entries[-1]
+        revdate = datetime.datetime.now().strftime("%Y%m%d.%H%M%S")+ "-" + commit
+        entries[-1] = (commit, name, email, date, revdate, subject, baseVersion, kind)
+
     entries.reverse()
 
     return entries
@@ -128,8 +138,8 @@ def genChangeLogEntries(f, entries, distribution):
         if distribution=="stable":
             version = upstreamVersion
         else:
-            version = upstreamVersion + "~" + distribution + "1"
-        print("nextcloud-client (%s) %s; urgency=medium" % (version, distribution), file=f)
+            version = upstreamVersion + "-1.0~" + distribution + "1"
+        print("nextcloud-desktop (%s) %s; urgency=medium" % (version, distribution), file=f)
         print(file=f)
         print("  * " + subject, file=f)
         print(file=f)
