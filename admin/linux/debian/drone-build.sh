@@ -48,7 +48,6 @@ fi
 
 origsourceopt=""
 
-#if ! wget http://ppa.launchpad.net/${repo}/ubuntu/pool/main/n/nextcloud-client/nextcloud-client_${basever}.orig.tar.bz2; then
 cp -a ${DRONE_WORKSPACE} nextcloud-desktop_${basever}-${revdate}
 tar cjf nextcloud-desktop_${basever}-${revdate}.orig.tar.bz2 --exclude .git nextcloud-desktop_${basever}-${revdate}
 
