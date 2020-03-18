@@ -87,7 +87,7 @@ def collectEntries(baseCommit, baseVersion, kind, finalRevDate):
 
         revdate += "-" + commit
 
-        kind = "beta"
+        kind = "alpha"
 
         if commit==newVersionCommit:
             result = processVersionTag(newVersionTag)
