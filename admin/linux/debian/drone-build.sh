@@ -40,7 +40,9 @@ cd "${DRONE_DIR}"
 
 echo "$kind" > kind
 
-if test "$kind" = "beta"; then
+if test "$kind" = "alpha"; then
+    repo=nextcloud-devs/client-alpha
+elif test "$kind" = "beta"; then
     repo=nextcloud-devs/client-beta
 else
     repo=nextcloud-devs/client
