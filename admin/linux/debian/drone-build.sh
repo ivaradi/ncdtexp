@@ -69,7 +69,7 @@ for distribution in eoan; do
     admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog ${distribution} ${revdate}
     cp /tmp/tmpchangelog debian/changelog
 
-    fullver=`head -1 debian/changelog | sed "s:nextcloud-package (\([^)]*\)).*:\1:"`
+    fullver=`head -1 debian/changelog | sed "s:nextcloud-desktop (\([^)]*\)).*:\1:"`
 
     echo "============================================================================"
     cat CMakeLists.txt
@@ -80,7 +80,7 @@ for distribution in eoan; do
     EDITOR=true dpkg-source --commit . local-changes
 
     dpkg-source --build .
-    dpkg-genchanges -S -sa > "../nextcloud-package_${fullver}_source.changes"
+    dpkg-genchanges -S -sa > "../nextcloud-desktop ${fullver}_source.changes"
 
     if test -f ~/.has_ppa_keys; then
         debsign -k7D14AA7B -S
