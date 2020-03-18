@@ -81,9 +81,11 @@ def collectEntries(baseCommit, baseVersion, kind, finalRevDate):
         (commit, name, email, date, revdate) = words[0:5]
         subject = "\t".join(words[5:])
         if first:
-            revdate = datetime.datetime.now().strftime("%Y%m%d.%H%M%S")+ "-" + commit
+            revdate = datetime.datetime.now().strftime("%Y%m%d.%H%M%S")
         else:
             revdate = datetime.datetime.utcfromtimestamp(long(revdate)).strftime("%Y%m%d.%H%M%S")
+
+        revdate += "-" + commit
 
         kind = "beta"
 
