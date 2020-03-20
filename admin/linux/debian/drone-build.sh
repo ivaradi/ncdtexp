@@ -61,8 +61,8 @@ for distribution in eoan; do
     git checkout -- .
     git clean -xdf
 
-    git fetch origin debian/ubuntu/${distribution}/master
-    git checkout origin/debian/ubuntu/${distribution}/master
+    git fetch origin debian/dist/${distribution}/master
+    git checkout origin/debian/dist/${distribution}/master
 
     git merge ${DRONE_COMMIT}
 
