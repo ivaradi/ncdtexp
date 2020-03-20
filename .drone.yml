@@ -364,6 +364,8 @@ trigger:
     - stable-2.6
   event:
     - tag
+    - pull_request
+    - push
 ---
 kind: pipeline
 name: Documentation
