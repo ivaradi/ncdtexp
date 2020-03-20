@@ -51,7 +51,7 @@ fi
 origsourceopt=""
 
 cp -a ${DRONE_WORKSPACE} nextcloud-desktop_${basever}-${revdate}
-tar cjf nextcloud-desktop_${basever}-${revdate}.orig.tar.bz2 --exclude .git nextcloud-desktop_${basever}-${revdate}
+tar cjf nextcloud-desktop_${basever}-${revdate}.orig.tar.bz2 --exclude .git --exclude binary nextcloud-desktop_${basever}-${revdate}
 
 cd "${DRONE_WORKSPACE}"
 git config --global user.email "abc@def.com"
