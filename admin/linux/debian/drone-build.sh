@@ -80,7 +80,7 @@ for distribution in eoan; do
     EDITOR=true dpkg-source --commit . local-changes
 
     dpkg-source --build .
-    dpkg-genchanges -S -sa > "../nextcloud-desktop ${fullver}_source.changes"
+    dpkg-genchanges -S -sa > "../nextcloud-desktop_${fullver}_source.changes"
 
     if test -f ~/.has_ppa_keys; then
         debsign -k7D14AA7B -S
