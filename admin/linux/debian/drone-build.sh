@@ -57,7 +57,7 @@ cd "${DRONE_WORKSPACE}"
 git config --global user.email "abc@def.com"
 git config --global user.name "Drone User"
 
-for distribution in xenial bionic eoan focal stable oldstable; do
+for distribution in buster; do
     git checkout -- .
     git clean -xdf
 
@@ -70,12 +70,6 @@ for distribution in xenial bionic eoan focal stable oldstable; do
     cp /tmp/tmpchangelog debian/changelog
 
     fullver=`head -1 debian/changelog | sed "s:nextcloud-desktop (\([^)]*\)).*:\1:"`
-
-    echo "============================================================================"
-    cat CMakeLists.txt
-    echo "============================================================================"
-    ls -al
-    echo "============================================================================"
 
     EDITOR=true dpkg-source --commit . local-changes
 
