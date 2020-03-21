@@ -10,7 +10,7 @@ PPA_BETA=ppa:nextcloud-devs/client-beta
 
 OBS_PROJECT=home:ivaradi
 OBS_PROJECT_BETA=home:ivaradi:beta
-OBS_PACKAGE=nextcloud-client
+OBS_PACKAGE=nextcloud-desktop
 
 pull_request=${DRONE_PULL_REQUEST:=master}
 
@@ -83,9 +83,7 @@ done
 cd ..
 ls -al
 
-exit 0
-
-if test "${pull_request}" = "master"; then
+#if test "${pull_request}" = "master"; then
     kind=`cat kind`
 
     if test "$kind" = "beta"; then
@@ -93,9 +91,14 @@ if test "${pull_request}" = "master"; then
         OBS_PROJECT=$OBS_PROJECT_BETA
     fi
 
+    PPA=ppa:ivaradi/nextcloud-client-exp
+    OBS_PROJECT=home:ivaradi:beta:exp
+
     if test -f ~/.has_ppa_keys; then
-        for changes in nextcloud-client_*~+([a-z])1_source.changes; do
+        for changes in nextcloud-package_*~+([a-z])1_source.changes; do
             case "${changes}" in
+                *buster1*)
+                    ;;
                 *oldstable1*)
                     ;;
                 *)
@@ -104,14 +107,9 @@ if test "${pull_request}" = "master"; then
             esac
         done
 
-        for distribution in stable oldstable; do
-            if test "${distribution}" = "oldstable"; then
-                pkgsuffix=".${distribution}"
-                pkgvertag="~${distribution}1"
-            else
-                pkgsuffix=""
-                pkgvertag=""
-            fi
+        for distribution in buster oldstable; do
+            pkgsuffix=".${distribution}"
+            pkgvertag="~${distribution}1"
 
             package="${OBS_PACKAGE}${pkgsuffix}"
             OBS_SUBDIR="${OBS_PROJECT}/${package}"
@@ -123,10 +121,10 @@ if test "${pull_request}" = "master"; then
                 osc delete ${OBS_SUBDIR}/*
             fi
 
-            cp ../nextcloud-client*.orig.tar.* ${OBS_SUBDIR}/
-            cp ../nextcloud-client_*[0-9.][0-9]${pkgvertag}.dsc ${OBS_SUBDIR}/
-            cp ../nextcloud-client_*[0-9.][0-9]${pkgvertag}.debian.tar* ${OBS_SUBDIR}/
-            cp ../nextcloud-client_*[0-9.][0-9]${pkgvertag}_source.changes ${OBS_SUBDIR}/
+            cp ../nextcloud-package*.orig.tar.* ${OBS_SUBDIR}/
+            cp ../nextcloud-package_*[0-9.][0-9]${pkgvertag}.dsc ${OBS_SUBDIR}/
+            cp ../nextcloud-package_*[0-9.][0-9]${pkgvertag}.debian.tar* ${OBS_SUBDIR}/
+            cp ../nextcloud-package_*[0-9.][0-9]${pkgvertag}_source.changes ${OBS_SUBDIR}/
             osc add ${OBS_SUBDIR}/*
 
             cd ${OBS_SUBDIR}
@@ -134,4 +132,4 @@ if test "${pull_request}" = "master"; then
             popd
         done
     fi
-fi
+#fi
