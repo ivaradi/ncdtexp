@@ -48,7 +48,7 @@ def getCommitVersion(commit):
     except:
         return None
 
-def collectEntries(baseCommit, baseVersion, kind):
+def collectEntries(baseCommit, baseVersion, kind, finalRevDate):
     scriptdir = os.path.dirname(__file__)
     configPath = os.path.join(scriptdir, "git2changelog.cfg")
 
@@ -78,13 +78,19 @@ def collectEntries(baseCommit, baseVersion, kind):
 
     lastVersionTag = None
     lastCMAKEVersion = None
+    first = True
     for line in output.splitlines():
         words = line.split("\t")
         (commit, name, email, date, revdate) = words[0:5]
         subject = "\t".join(words[5:])
-        revdate = datetime.datetime.utcfromtimestamp(long(revdate)).strftime("%Y%m%d.%H%M%S")
+        if first:
+            revdate = datetime.datetime.now().strftime("%Y%m%d.%H%M%S")
+        else:
+            revdate = datetime.datetime.utcfromtimestamp(long(revdate)).strftime("%Y%m%d.%H%M%S")
 
-        kind = "beta"
+        revdate += "-" + commit
+
+        kind = "alpha"
 
         if commit==newVersionCommit:
             result = processVersionTag(newVersionTag)
@@ -120,7 +126,10 @@ def collectEntries(baseCommit, baseVersion, kind):
 
     if entries:
         (commit, name, email, date, revdate, subject, baseVersion, kind) = entries[-1]
-        revdate = datetime.datetime.now().strftime("%Y%m%d.%H%M%S")+ "-" + commit
+        if finalRevDate is None:
+            revdate = datetime.datetime.now().strftime("%Y%m%d.%H%M%S")+ "-" + commit
+        else:
+            revdate = finalRevDate
         entries[-1] = (commit, name, email, date, revdate, subject, baseVersion, kind)
 
     entries.reverse()
@@ -129,10 +138,12 @@ def collectEntries(baseCommit, baseVersion, kind):
 
 def genChangeLogEntries(f, entries, distribution):
     latestBaseVersion = None
+    latestRevDate = None
     latestKind = None
     for (commit, name, email, date, revdate, subject, baseVersion, kind) in entries:
         if latestBaseVersion is None:
             latestBaseVersion = baseVersion
+            latestRevDate = revdate
             latestKind = kind
         upstreamVersion = baseVersion + "-" + revdate
         if distribution=="stable":
@@ -145,16 +156,17 @@ def genChangeLogEntries(f, entries, distribution):
         print(file=f)
         print(" -- %s <%s>  %s" % (name, email, date), file=f)
         print(file=f)
-    return (latestBaseVersion, latestKind)
+    return (latestBaseVersion, latestRevDate, latestKind)
 
 if __name__ == "__main__":
 
     distribution = sys.argv[2]
+    finalRevDate = sys.argv[3] if len(sys.argv)>3 else None
 
     #entries = collectEntries("8aade24147b5313f8241a8b42331442b7f40eef9", "2.2.4", "release")
-    entries = collectEntries("f9b1c724d6ab5431e0cd56b7cd834f2dd48cebb1", "2.4.0", "beta")
-
+    entries = collectEntries("f9b1c724d6ab5431e0cd56b7cd834f2dd48cebb1",
+                             "2.4.0", "beta", finalRevDate)
 
     with open(sys.argv[1], "wt") as f:
-        (baseVersion, kind) = genChangeLogEntries(f, entries, distribution)
-        print(baseVersion, kind)
+        (baseVersion, revdate, kind) = genChangeLogEntries(f, entries, distribution)
+        print(baseVersion, revdate, kind)
