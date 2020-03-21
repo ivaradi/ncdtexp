@@ -57,7 +57,7 @@ cd "${DRONE_WORKSPACE}"
 git config --global user.email "abc@def.com"
 git config --global user.name "Drone User"
 
-for distribution in buster; do
+for distribution in xenial bionic eoan focal buster oldstable; do
     git checkout -- .
     git clean -xdf
 
