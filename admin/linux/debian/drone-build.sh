@@ -95,7 +95,7 @@ ls -al
     fi
 
     PPA=ppa:ivaradi/nextcloud-client-exp
-    OBS_PROJECT=home:ivaradi:beta:exp
+    OBS_PROJECT=home:ivaradi:exp
 
     if test -f ~/.has_ppa_keys; then
         for distribution in ${UBUNTU_DISTRIBUTIONS}; do
