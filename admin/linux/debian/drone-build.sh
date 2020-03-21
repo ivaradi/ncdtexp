@@ -12,6 +12,9 @@ OBS_PROJECT=home:ivaradi
 OBS_PROJECT_BETA=home:ivaradi:beta
 OBS_PACKAGE=nextcloud-desktop
 
+UBUNTU_DISTRIBUTIONS="xenial bionic eoan focal"
+DEBIAN_DISTRIBUTIONS="buster oldstable"
+
 pull_request=${DRONE_PULL_REQUEST:=master}
 
 if test -z "${DRONE_WORKSPACE}"; then
@@ -57,7 +60,7 @@ cd "${DRONE_WORKSPACE}"
 git config --global user.email "abc@def.com"
 git config --global user.name "Drone User"
 
-for distribution in xenial bionic eoan focal buster oldstable; do
+for distribution in ${UBUNTU_DISTRIBUTIONS} ${DEBIAN_DISTRIBUTIONS}; do
     git checkout -- .
     git clean -xdf
 
@@ -95,19 +98,14 @@ ls -al
     OBS_PROJECT=home:ivaradi:beta:exp
 
     if test -f ~/.has_ppa_keys; then
-        for changes in nextcloud-package_*~+([a-z])1_source.changes; do
-            case "${changes}" in
-                *buster1*)
-                    ;;
-                *oldstable1*)
-                    ;;
-                *)
-                    dput $PPA $changes > /dev/null
-                    ;;
-            esac
+        for distribution in ${UBUNTU_DISTRIBUTIONS}; do
+            changes=$(ls -1 nextcloud-desktop_*~${distribution}1_source.changes)
+            if test -f "${changes}"; then
+                dput $PPA "${changes}" > /dev/null
+            fi
         done
 
-        for distribution in buster oldstable; do
+        for distribution in ${DEBIAN_DISTRIBUTIONS}; do
             pkgsuffix=".${distribution}"
             pkgvertag="~${distribution}1"
 
@@ -121,10 +119,10 @@ ls -al
                 osc delete ${OBS_SUBDIR}/*
             fi
 
-            cp ../nextcloud-package*.orig.tar.* ${OBS_SUBDIR}/
-            cp ../nextcloud-package_*[0-9.][0-9]${pkgvertag}.dsc ${OBS_SUBDIR}/
-            cp ../nextcloud-package_*[0-9.][0-9]${pkgvertag}.debian.tar* ${OBS_SUBDIR}/
-            cp ../nextcloud-package_*[0-9.][0-9]${pkgvertag}_source.changes ${OBS_SUBDIR}/
+            cp ../nextcloud-desktop*.orig.tar.* ${OBS_SUBDIR}/
+            cp ../nextcloud-desktop_*[0-9.][0-9]${pkgvertag}.dsc ${OBS_SUBDIR}/
+            cp ../nextcloud-desktop_*[0-9.][0-9]${pkgvertag}.debian.tar* ${OBS_SUBDIR}/
+            cp ../nextcloud-desktop_*[0-9.][0-9]${pkgvertag}_source.changes ${OBS_SUBDIR}/
             osc add ${OBS_SUBDIR}/*
 
             cd ${OBS_SUBDIR}
