@@ -31,7 +31,11 @@ fi
 set -x
 
 cd "${DRONE_WORKSPACE}"
+git tag
+
 read basever kind <<<$(admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog stable)
+
+exit 0
 
 cd "${DRONE_DIR}"
 
