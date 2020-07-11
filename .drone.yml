@@ -1,6 +1,11 @@
 kind: pipeline
 name: Debian
 
+clone:
+  git:
+    image: plugins/git
+    tags: true
+
 steps:
 - name: build
   image: nextcloudci/client-debian-ci:client-debian-ci-2
