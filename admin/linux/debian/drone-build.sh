@@ -31,8 +31,7 @@ fi
 set -x
 
 cd "${DRONE_WORKSPACE}"
-git tag
-
+git fetch --tags
 read basever kind <<<$(admin/linux/debian/scripts/git2changelog.py /tmp/tmpchangelog stable)
 
 exit 0
